@@ -1,0 +1,15 @@
+{
+  "id": "cluster1",
+  "name": "cluster1",
+  "description": "Kubernetes cluster",
+  "location": "Madrid",
+  "type": "k8s",
+  "so": "ubuntu18",
+  "defaultNamespace": "core",
+  "restAPIEndPoint": "https://192.168.1.131:16443/",
+  "ip": "192.168.1.131",
+  "connectionToken": "eyJhbG....wm9AKA",
+  "slaLiteEndPoint": "http://localhost:8090",
+  "prometheusPushgatewayEndPoint": "",
+  "prometheusEndPoint": "https://192.168.1.131:9090/"
+}
