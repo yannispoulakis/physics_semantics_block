@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.physics-h2020.eu/physics/"
+     xml:base="http://www.physics-h2020.eu/physics/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:physics="http://www.physics-h2020.eu/physics/">
+    <owl:Ontology rdf:about="http://www.physics-h2020.eu/physics/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/consistsOf -->
+
+    <owl:AnnotationProperty rdf:about="http://www.physics-h2020.eu/physics/consistsOf">
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Node"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/deployedOn -->
+
+    <owl:AnnotationProperty rdf:about="http://www.physics-h2020.eu/physics/deployedOn"/>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hostedOn -->
+
+    <owl:AnnotationProperty rdf:about="http://www.physics-h2020.eu/physics/hostedOn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/consistsOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/consistsOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasA -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasA">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/isDeployedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/isDeployedOn">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/ServerlessPlatform"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/isHostedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/isHostedOn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/architecture -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/architecture">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/os"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/connectionToken -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/connectionToken">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">credential token to the cluster API server (service account)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/defaultNamespace -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/defaultNamespace">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">namespace of a Kubernetes based cluster</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/id">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ip -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/ip">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Node"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">IP in case of an edge node to create remote shell connection</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/location -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/location">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/name">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/os -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/os">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Node"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/prometheusEndPoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/prometheusEndPoint">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">url of a Prometheus instance (metric collector) for querying metrics</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/prometheusPushgatewayEndPoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/prometheusPushgatewayEndPoint">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">url of a pushgateway program to get edge metrics</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/restAPIEndPoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/restAPIEndPoint">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">url of the cluster API server</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/slaLiteEndPoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/slaLiteEndPoint">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">url of the SLA component REST API</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/version -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/version">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/os"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Cluster -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Cluster"/>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Node -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Node"/>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/PrivateCloud -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/PrivateCloud">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/PublicCloud -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/PublicCloud">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Resource -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Resource"/>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ServerlessPlatform -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/ServerlessPlatform"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/cluster1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.physics-h2020.eu/physics/cluster1">
+        <rdf:type rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <architecture rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">X64</architecture>
+        <connectionToken>eyJhbG....wm9AKA</connectionToken>
+        <defaultNamespace>core</defaultNamespace>
+        <id>cluster1</id>
+        <ip>192.168.1.131</ip>
+        <name>cluster1</name>
+        <os>ubuntu</os>
+        <prometheusEndPoint>https://192.168.1.131:9090/</prometheusEndPoint>
+        <restAPIEndPoint>https://192.168.1.131:16443/</restAPIEndPoint>
+        <slaLiteEndPoint>http://localhost:8090</slaLiteEndPoint>
+        <version rdf:datatype="http://www.w3.org/2001/XMLSchema#float">18.04</version>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

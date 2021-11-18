@@ -1,14 +1,16 @@
 from flask import Flask, request, render_template
 from owlready2 import *
 
-onto = get_ontology("with_george/physics.owl").load()
+onto = get_ontology("physics.owl").load()
 onto.base_iri
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def render_home():
     return render_template("main_page.html")
+
 
 @app.route("/add_resource", methods=["POST"])
 def parse_resource_input():
@@ -39,6 +41,7 @@ def get_individuals():
         print(i)
 
     return "Individual created"
+
 
 if __name__ == "__main__":
     app.run()
