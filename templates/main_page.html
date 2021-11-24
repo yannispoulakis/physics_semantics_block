@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-h1 {text-align: center;}
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-</style>
+<link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='CSS/style.css') }}">
 </head>
-
 <body>
-<h1>PHYSICS Semantics Block</h1>
-<img src="/static/cropped-PHYSICS-logo.png" alt="physics logo" style="width:64px;height:64px;" class="center">
+<h1>
+    <img src="{{ url_for('static',filename='cropped-PHYSICS-logo.png') }}" alt="physics logo"  width="20%" height="20%">
+</h1>
+<h2 class="heading-1"> Semantics Block </h2>
+
+<a class="button" href="http://127.0.0.1:5000/get_available_clusters">Available Clusters</a>
+
+
 </body>
 </html>
