@@ -79,8 +79,6 @@ def get_locations_of_available_clusters():
     d = dict()
     for i in onto.Cluster.instances():
         d[i.name] = i.location
-        # keep only the relevant properties for each cluster
-        #d[i.name] = {k: v for k, v in d[i.name].items() if k in "location"}
     return d
 
 
