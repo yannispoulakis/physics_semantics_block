@@ -89,5 +89,14 @@ def visualize_ontology():
 
     return render_template("index.html")
 
+@app.route("/get_locations_of_available_clusters", methods=["GET"])
+def get_locations_of_available_clusters():
+    """Returns in json geolocation information about the available clusters"""
+    d = dict()
+    for i in onto.Cluster.instances():
+        d[i.name] = i.location
+    return d
+
+
 if __name__ == "__main__":
     app.run("127.0.0.1", 5000, debug=False)
