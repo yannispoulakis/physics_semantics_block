@@ -3,7 +3,10 @@ from flask import Flask, request, render_template
 from owlready2 import *
 from static_params import cluster_properties
 import logging
-onto = get_ontology("physics.owl").load()
+import ontospy
+from ontospy.ontodocs.viz.viz_d3dendogram import *
+
+onto = get_ontology("physics_V0.1.owl").load()
 onto.base_iri
 
 
@@ -72,6 +75,19 @@ def get_available_clusters():
         d[i.name] = {k: v for k, v in d[i.name].items() if k in cluster_properties}
     return d
 
+@app.route("/visualize_ontology", methods=["GET"])
+def visualize_ontology():
+    """Provides a visualization of the ontology with ontospy"""
+    from shutil import copyfile
+    from distutils.dir_util import copy_tree
+
+    g = ontospy.Ontospy("physics_V0.1.owl")
+    v = Dataviz(g)  # => instantiate the visualization object
+    d3_result = v.build("dendrogram/")  # => render visualization. You can pass an 'output_path' parameter too
+    copy_tree("dendrogram/static", r"C:\Users\giann\OneDrive\Έγγραφα\GitHub\physics_semantics_block\static")
+    copyfile("dendrogram/index.html", r"C:\Users\giann\OneDrive\Έγγραφα\GitHub\physics_semantics_block\templates\index.html")
+
+    return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run("127.0.0.1", 5000, debug=True)
+    app.run("127.0.0.1", 5000, debug=False)
