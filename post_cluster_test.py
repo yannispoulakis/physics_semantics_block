@@ -13,7 +13,7 @@ data = [{"id": "cluster1",
          "defaultNamespace": "core",
          "restAPIEndPoint": "https://192.168.1.131:16443/",
          "ip": "192.168.1.131",
-         "connectionToken": "eyJhbG....wm9AKA",
+         "connectionToken": "eyJhbGwm9AKA",
          "slaLiteEndPoint": "http://localhost:8090",
          "prometheusPushgatewayEndPoint": "",
          "prometheusEndPoint": "https://192.168.1.131:9090/"
@@ -27,7 +27,7 @@ data = [{"id": "cluster1",
          "defaultNamespace": "core",
          "restAPIEndPoint": "https://192.168.1.131:16443/",
          "ip": "192.168.1.131",
-         "connectionToken": "eyJhbG....wm9AKA",
+         "connectionToken": "axjGHJK34wm9AKA",
          "slaLiteEndPoint": "http://localhost:8090",
          "prometheusPushgatewayEndPoint": "",
          "prometheusEndPoint": "https://192.168.1.131:9090/"
@@ -44,7 +44,7 @@ headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 def post_data():
     for jsondata in data:
         res = requests.post(url, json=jsondata, headers=headers)
-        print(res.json())
+    print(res.json())
 
 
 if __name__ == '__main__':
