@@ -1,2 +1,5 @@
-# physics_semantics_block
-This repository contains the code for the semantics blockparty of  the EU project PHYSICS. 
+# Physics Semantics Block
+
+## This repository contains the code for the semantics blockparty of the EU's H2020 PHYSICS project. 
+
+The objective of this API is to provide semantic reasoning towards matchmaking FAAS applications' requirements and available computational resources.
