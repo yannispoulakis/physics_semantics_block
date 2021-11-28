@@ -79,15 +79,14 @@ def get_available_clusters():
 @app.route("/visualize_ontology", methods=["GET"])
 def visualize_ontology():
     """Provides a visualization of the ontology with ontospy"""
-    from shutil import copyfile
-    from distutils.dir_util import copy_tree
+    from shutil import move, rmtree
 
     g = ontospy.Ontospy("physics_V0.1.owl")
     v = Dataviz(g)  # => instantiate the visualization object
-    d3_result = v.build("dendrogram/")  # => render visualization. You can pass an 'output_path' parameter too
+    v.build("dendrogram/")  # => render visualization. You can pass an 'output_path' parameter too
     # copy_tree("dendrogram/static", r"\physics_semantics_block\static")
-    copyfile("templates/index.html", r".\physics_semantics_block\templates\index.html")
-
+    move("dendrogram/index.html", r".\physics_semantics_block\templates\index.html")
+    rmtree("dendrogram")
     return render_template("index.html")
 
 @app.route("/get_locations_of_available_clusters", methods=["GET"])
