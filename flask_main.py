@@ -75,6 +75,7 @@ def get_available_clusters():
         d[i.name] = {k: v for k, v in d[i.name].items() if k in cluster_properties}
     return d
 
+
 @app.route("/visualize_ontology", methods=["GET"])
 def visualize_ontology():
     """Provides a visualization of the ontology with ontospy"""
@@ -84,8 +85,8 @@ def visualize_ontology():
     g = ontospy.Ontospy("physics_V0.1.owl")
     v = Dataviz(g)  # => instantiate the visualization object
     d3_result = v.build("dendrogram/")  # => render visualization. You can pass an 'output_path' parameter too
-    copy_tree("dendrogram/static", r"C:\Users\giann\OneDrive\Έγγραφα\GitHub\physics_semantics_block\static")
-    copyfile("dendrogram/index.html", r"C:\Users\giann\OneDrive\Έγγραφα\GitHub\physics_semantics_block\templates\index.html")
+    # copy_tree("dendrogram/static", r"\physics_semantics_block\static")
+    copyfile("templates/index.html", r".\physics_semantics_block\templates\index.html")
 
     return render_template("index.html")
 
