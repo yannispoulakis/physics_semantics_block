@@ -73,7 +73,7 @@ def get_available_clusters():
         d[i.name] = i.__dict__
         # keep only the relevant properties for each cluster
         d[i.name] = {k: v for k, v in d[i.name].items() if k in cluster_properties}
-    return d
+    return json.dumps(d)
 
 
 @app.route("/visualize_ontology", methods=["GET"])
@@ -95,7 +95,7 @@ def get_locations_of_available_clusters():
     d = dict()
     for i in onto.Cluster.instances():
         d[i.name] = i.location
-    return d
+    return json.dumps(d)
 
 
 if __name__ == "__main__":

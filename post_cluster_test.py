@@ -44,7 +44,7 @@ headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 def post_data():
     for jsondata in data:
         res = requests.post(url, json=jsondata, headers=headers)
-    print(res.json())
+        print(res.json())
 
 
 if __name__ == '__main__':
