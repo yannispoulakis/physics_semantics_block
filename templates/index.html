@@ -5,7 +5,15 @@
 <title>Ontospy > http://www.physics-h2020.eu/physics/</title>
 
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+
+
+
+
+
+
 <style type="text/css" media="screen">
+
 
 body {
 	margin-left: 6em;
@@ -240,7 +248,7 @@ kbd {
 
 
 	<hr>
-    <small class="credits">Ontology documentation automatically generated with <a class="greylink" href="http://lambdamusic.github.io/Ontospy/" target="_blank">Ontospy</a> on 28th November 2021 18:45.
+    <small class="credits">Ontology documentation automatically generated with <a class="greylink" href="http://lambdamusic.github.io/Ontospy/" target="_blank">Ontospy</a> on 23rd December 2021 11:05.
     
         
 
@@ -340,7 +348,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :Cluster a owl:Class .
 
@@ -394,8 +411,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :EdgeDevice a owl:Class ;
     rdfs:subClassOf :Node .
@@ -454,7 +479,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :Node a owl:Class .
 
@@ -508,8 +542,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :PhysicalComputeNode a owl:Class ;
     rdfs:subClassOf :Node .
@@ -564,8 +606,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :PrivateCloud a owl:Class ;
     rdfs:subClassOf :Resource .
@@ -624,8 +674,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :PublicCloud a owl:Class ;
     rdfs:subClassOf :Resource .
@@ -682,7 +740,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :Resource a owl:Class .
 
@@ -738,7 +805,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :SLA a owl:Class .
 
@@ -792,7 +868,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :ServerlessPlatform a owl:Class .
 
@@ -846,8 +931,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :VirtualMachine a owl:Class ;
     rdfs:subClassOf :Node .
@@ -910,8 +1003,15 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :architecture a owl:DatatypeProperty,
@@ -971,8 +1071,15 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :connectionToken a owl:DatatypeProperty,
@@ -1019,7 +1126,7 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	
 	
 	
-		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('45');" class="class">Nb8fd6faa0ef74771bf1cd331760eb218</a>  </p>
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('45');" class="class">N6a913b9e6db347cc9048886e29e8f256</a>  </p>
 	
 	
 	
@@ -1029,9 +1136,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :consistsOf a owl:ObjectProperty ;
     rdfs:domain [ a owl:Class ;
@@ -1091,8 +1205,15 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :defaultNamespace a owl:DatatypeProperty,
@@ -1149,8 +1270,15 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :id a owl:DatatypeProperty,
@@ -1210,8 +1338,15 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :ip a owl:DatatypeProperty,
@@ -1258,7 +1393,7 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	
 	
 	
-		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('10');" class="class">:ServerlessPlatform</a> | <a href="javascript:showpanel('46');" class="class">N9286ca1d880f4498b5ef9b20cea3129d</a>  </p>
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('10');" class="class">:ServerlessPlatform</a> | <a href="javascript:showpanel('46');" class="class">N3a883e22b46a49d68b0332cf560b2fa4</a>  </p>
 	
 	
 	
@@ -1266,9 +1401,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :isDeployedOn a owl:ObjectProperty ;
     rdfs:domain :ServerlessPlatform ;
@@ -1323,8 +1465,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :isHostedOn a owl:FunctionalProperty,
         owl:ObjectProperty ;
@@ -1369,7 +1519,7 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	
 	
 	
-		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('4');" class="class">:Node</a> | <a href="javascript:showpanel('47');" class="class">N8786d1ad2c1041e29ecc8044e1722dd3</a>  </p>
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('4');" class="class">:Node</a> | <a href="javascript:showpanel('47');" class="class">N9678f1310c7941bb97f3faee0cad5367</a>  </p>
 	
 	
 	
@@ -1377,9 +1527,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :isPartOf a owl:ObjectProperty ;
     rdfs:domain :Node ;
@@ -1434,8 +1591,15 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :location a owl:DatatypeProperty,
@@ -1491,8 +1655,15 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :name a owl:DatatypeProperty,
@@ -1552,8 +1723,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :prometheusEndPoint a owl:DatatypeProperty,
         owl:FunctionalProperty ;
@@ -1613,8 +1792,15 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :prometheusPushgatewayEndPoint a owl:DatatypeProperty,
@@ -1671,8 +1857,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :providedBy a owl:FunctionalProperty,
         owl:ObjectProperty ;
@@ -1728,8 +1922,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :provides a owl:FunctionalProperty,
         owl:ObjectProperty ;
@@ -1788,8 +1990,15 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :restAPIEndPoint a owl:DatatypeProperty,
@@ -1850,8 +2059,15 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :slaLiteEndPoint a owl:DatatypeProperty,
@@ -1900,7 +2116,7 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	
 	
 	
-		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('42');" class="class">Nc127c0f128c7408d9a3d016df0e8b878</a>  </p>
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('42');" class="class">N5b442c492a034c50b4a827259bcf96f8</a>  </p>
 	
 	
 	
@@ -1910,9 +2126,16 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :so a owl:DatatypeProperty ;
     rdfs:domain [ a owl:Class ;
@@ -1967,8 +2190,15 @@ Visualization developed with <a class="greylink" href="https://github.com/d3/d3"
 	<hr>
 	<b class="section-title">Implementation:</b>
 	<pre class="turtlesource">@prefix : &lt;http://www.physics-h2020.eu/physics/&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :version a owl:DatatypeProperty,
@@ -2197,7 +2427,7 @@ function update(vis, tree, diagonal, source, root) {
   // Normalize for fixed-depth.
   nodes.forEach(function(d) { d.y = d.depth * 180; });
 
-  // Update the nodes…
+  // Update the nodesβ€¦
   var node = vis.selectAll("g.node")
       .data(nodes, function(d) { return d.id || (d.id = ++i); });
 
@@ -2287,7 +2517,7 @@ function update(vis, tree, diagonal, source, root) {
   nodeExit.select("text")
       .style("fill-opacity", 1e-6);
 
-  // Update the links…
+  // Update the linksβ€¦
   var link = vis.selectAll("path.link")
       .data(tree.links(nodes), function(d) { return d.target.id; });
 

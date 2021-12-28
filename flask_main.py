@@ -75,6 +75,17 @@ def get_available_clusters():
         d[i.name] = {k: v for k, v in d[i.name].items() if k in cluster_properties}
     return json.dumps(d)
 
+import errno, os, stat, shutil
+
+def handleRemoveReadonly(func, path, exc):
+  excvalue = exc[1]
+  if func in (os.rmdir, os.remove) and excvalue.errno == errno.EACCES:
+      os.chmod(path, stat.S_IRWXU| stat.S_IRWXG| stat.S_IRWXO) # 0777
+      func(path)
+  else:
+      raise
+
+
 
 @app.route("/visualize_ontology", methods=["GET"])
 def visualize_ontology():
@@ -85,8 +96,8 @@ def visualize_ontology():
     v = Dataviz(g)  # => instantiate the visualization object
     v.build("dendrogram/")  # => render visualization. You can pass an 'output_path' parameter too
     # copy_tree("dendrogram/static", r"\physics_semantics_block\static")
-    move("dendrogram/index.html", r".\physics_semantics_block\templates\index.html")
-    rmtree("dendrogram")
+    move("dendrogram/index.html", r"templates\index.html")
+    rmtree("dendrogram", ignore_errors=False, onerror=handleRemoveReadonly)
     return render_template("index.html")
 
 @app.route("/get_locations_of_available_clusters", methods=["GET"])
