@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+
+<body>
+
+<div data-role="page">
+  <div data-role="header">
+  <h1>
+    <img src="{{ url_for('static',filename='PHYSICS-logo.svg') }}" alt="physics logo"   width="20%">
+  </h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <form method="post" action="/register_resource">
+      <fieldset data-role="collapsible">
+        <legend>Register a Cluster</legend>
+          <label for="name">Cluster Name</label>
+          <input type="text" name="clusterName" id="name">
+          <label for="name">External IP:</label>
+          <input type="text" name="clusterExternalIP" id="name">
+
+
+
+      <input type="submit" data-inline="true" value="Submit">
+      </fieldset>
+    </form>
+
+    <form method="post" action="/register_resource">
+      <fieldset data-role="collapsible">
+        <legend>Register a Node</legend>
+          <label for="name">Full Name:</label>
+          <input type="text" name="text" id="name">
+          <label for="name">Full Name:</label>
+          <input type="text" name="text" id="name">
+
+
+
+      <input type="submit" data-inline="true" value="Submit">
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
