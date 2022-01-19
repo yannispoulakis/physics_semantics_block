@@ -7,8 +7,7 @@ import ontospy
 from ontospy.ontodocs.viz.viz_d3dendogram import *
 import errno, os, stat, shutil
 
-
-onto = get_ontology("physics_V0.1.owl").load()
+onto = get_ontology("physics_v0.1.owl").load()
 onto.base_iri
 
 
@@ -106,15 +105,13 @@ def get_available_clusters():
     return json.dumps(d)
 
 
-
 def handleRemoveReadonly(func, path, exc):
-  excvalue = exc[1]
-  if func in (os.rmdir, os.remove) and excvalue.errno == errno.EACCES:
-      os.chmod(path, stat.S_IRWXU| stat.S_IRWXG| stat.S_IRWXO) # 0777
-      func(path)
-  else:
-      raise
-
+    excvalue = exc[1]
+    if func in (os.rmdir, os.remove) and excvalue.errno == errno.EACCES:
+        os.chmod(path, stat.S_IRWXU | stat.S_IRWXG | stat.S_IRWXO)  # 0777
+        func(path)
+    else:
+        raise
 
 
 @app.route("/visualize_ontology", methods=["GET"])
@@ -129,6 +126,7 @@ def visualize_ontology():
     move("dendrogram/index.html", r"templates\index.html")
     rmtree("dendrogram", ignore_errors=False, onerror=handleRemoveReadonly)
     return render_template("index.html")
+
 
 @app.route("/get_locations_of_available_clusters", methods=["GET"])
 def get_locations_of_available_clusters():
