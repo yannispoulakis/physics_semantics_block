@@ -1,0 +1,137 @@
+{
+    "Reservations": [
+        {
+            "Groups": [],
+            "Instances": [
+                {
+                    "AmiLaunchIndex": 0,
+                    "ImageId": "ami-0f859448095dc6195",
+                    "InstanceId": "i-086ebe931229b6cff",
+                    "InstanceType": "m5.xlarge",
+                    "LaunchTime": "2021-12-10T19:24:10+00:00",
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "Placement": {
+                        "AvailabilityZone": "eu-north-1a",
+                        "GroupName": "",
+                        "Tenancy": "default"
+                    },
+                    "PrivateDnsName": "ip-10-0-145-253.eu-north-1.compute.internal",
+                    "PrivateIpAddress": "10.0.145.253",
+                    "ProductCodes": [],
+                    "PublicDnsName": "",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "StateTransitionReason": "",
+                    "SubnetId": "subnet-0bf6091c1f4a8155a",
+                    "VpcId": "vpc-01b60f15400efd520",
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/xvda",
+                            "Ebs": {
+                                "AttachTime": "2021-12-10T19:24:10+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-04a4995570c09006b"
+                            }
+                        }
+                    ],
+                    "ClientToken": "60E4F9D4-117E-4B7E-8A29-13B7F2AC2780",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "IamInstanceProfile": {
+                        "Arn": "arn:aws:iam::511621537398:instance-profile/ocphub-t4rh8-master-profile",
+                        "Id": "AIPAXOHYFDZ3PZQJZFX26"
+                    },
+                    "NetworkInterfaces": [
+                        {
+                            "Attachment": {
+                                "AttachTime": "2021-12-10T19:24:10+00:00",
+                                "AttachmentId": "eni-attach-059553841faf26621",
+                                "DeleteOnTermination": false,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "Created By OpenShift Installer",
+                            "Groups": [
+                                {
+                                    "GroupName": "terraform-20211210192320307500000001",
+                                    "GroupId": "sg-0cf13b144fb97655e"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "06:f9:a4:34:e4:d4",
+                            "NetworkInterfaceId": "eni-090ec5e0d777fb266",
+                            "OwnerId": "511621537398",
+                            "PrivateDnsName": "ip-10-0-145-253.eu-north-1.compute.internal",
+                            "PrivateIpAddress": "10.0.145.253",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-10-0-145-253.eu-north-1.compute.internal",
+                                    "PrivateIpAddress": "10.0.145.253"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-0bf6091c1f4a8155a",
+                            "VpcId": "vpc-01b60f15400efd520",
+                            "InterfaceType": "interface"
+                        }
+                    ],
+                    "RootDeviceName": "/dev/xvda",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupName": "terraform-20211210192320307500000001",
+                            "GroupId": "sg-0cf13b144fb97655e"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "kubernetes.io/cluster/ocphub-t4rh8",
+                            "Value": "owned"
+                        },
+                        {
+                            "Key": "ocphub",
+                            "Value": "true"
+                        },
+                        {
+                            "Key": "Name",
+                            "Value": "ocphub-t4rh8-master-0"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 2,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "optional",
+                        "HttpPutResponseHopLimit": 1,
+                        "HttpEndpoint": "enabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    }
+                }
+            ],
+            "OwnerId": "511621537398",
+            "ReservationId": "r-0759b114ded1ccf90"
+        }
+    ]
+}
