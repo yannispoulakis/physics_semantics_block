@@ -14,13 +14,16 @@ class service_onto_rules:
     def add_locality(self):
         qres = default_world.sparql(self.find_cluster)
         for row in qres:
-            print(row)
             cluster = row[0]
-            print(cluster.ConsistsOfNodes[0].ClusterNodeIsHostedOn[0].is_a[0])
-            if all(node.ClusterNodeIsHostedOn[0].is_a[0] == self.onto.SingleBoardUnit for node in cluster.ConsistsOfNodes):
+
+            if all(node.ClusterNodeIsHostedOn[0].is_a[0] == self.onto.SingleBoardUnit for node in
+                   cluster.ConsistsOfNodes):
                 cluster.hasLocality = "edge"
-            elif any(node.ClusterNodeIsHostedOn[0].is_a[0] == self.onto.SingleBoardUnit for node in cluster.ConsistsOfNodes):
+
+            elif any(node.ClusterNodeIsHostedOn[0].is_a[0] == self.onto.SingleBoardUnit for node in
+                     cluster.ConsistsOfNodes):
                 cluster.hasLocality = "hybrid"
+
             else:
                 cluster.hasLocality = "cloud"
 

@@ -1479,275 +1479,435 @@ Management Entities include management systems, orchestrators, operations suppor
   <rdfs:label xml:lang="en">Attribute with Variance</rdfs:label>
 </rdf:Description>
 
-<phys:Cluster rdf:about="cluster1">
+<phys:CloudProvider rdf:about="AWS">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:ClusterUsesPlatform rdf:resource="kubernetes1"/>
-  <phys:ConsistsOfNodes rdf:resource="clusternode2"/>
-  <phys:ConsistsOfNodes rdf:resource="clusternode1"/>
-  <phys:ClusterHasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">202205-0503-0359-fa9ea94d-9472-4979-a42b-bc3de222d45e</phys:ClusterHasID>
-</phys:Cluster>
+  <phys:providesCloudService rdf:resource="EC2"/>
+</phys:CloudProvider>
 
-<phys:Kubernetes rdf:about="kubernetes1">
+<phys:CloudService rdf:about="EC2">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:PlatformHasDistribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K3s</phys:PlatformHasDistribution>
-</phys:Kubernetes>
+</phys:CloudService>
 
 <phys:OS rdf:about="os1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
-  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubuntu 20.04.3 LTS</phys:OperatingSystemHasImage>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
 </phys:OS>
 
 <phys:ClusterNode rdf:about="clusternode1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram1"/>
   <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu1"/>
-  <phys:ClusterNodeIsHostedOn rdf:resource="singleboardunit3"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram1"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
   <phys:OperatesWith rdf:resource="os1"/>
-  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master</phys:hasRole>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</phys:hasRole>
 </phys:ClusterNode>
 
 <phys:Ram rdf:about="ram1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceAllocatableValue>
-  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceCapacityValue>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14921720Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16072696Ki</phys:RawComputationalResourceCapacityValue>
 </phys:Ram>
 
 <phys:CPU rdf:about="cpu1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceAllocatableValue>
-  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceCapacityValue>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
 </phys:CPU>
 
 <phys:OS rdf:about="os2">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
-  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubuntu 20.04.3 LTS</phys:OperatingSystemHasImage>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
 </phys:OS>
 
 <phys:ClusterNode rdf:about="clusternode2">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu2"/>
   <phys:ClusterNodeHasComputationalUnit rdf:resource="ram2"/>
-  <phys:ClusterNodeIsHostedOn rdf:resource="singleboardunit3"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu2"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
   <phys:OperatesWith rdf:resource="os2"/>
-  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</phys:hasRole>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master</phys:hasRole>
 </phys:ClusterNode>
 
 <phys:Ram rdf:about="ram2">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceAllocatableValue>
-  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceCapacityValue>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14749688Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15900664Ki</phys:RawComputationalResourceCapacityValue>
 </phys:Ram>
 
 <phys:CPU rdf:about="cpu2">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceAllocatableValue>
-  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceCapacityValue>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
 </phys:CPU>
-
-<phys:SingleBoardUnit rdf:about="singleboardunit1">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:OperatesWith rdf:resource="linux1"/>
-  <phys:hasRawComputationalUnit rdf:resource="ram3"/>
-  <phys:hasRawComputationalUnit rdf:resource="cpu3"/>
-</phys:SingleBoardUnit>
-
-<phys:Ram rdf:about="ram3">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:withNumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:withNumValue>
-</phys:Ram>
-
-<phys:CPU rdf:about="cpu3">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:withNumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> 6</phys:withNumValue>
-</phys:CPU>
-
-<phys:Linux rdf:about="linux1">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</phys:Linux>
-
-<phys:Cluster rdf:about="cluster2">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:ClusterUsesPlatform rdf:resource="kubernetes2"/>
-  <phys:ConsistsOfNodes rdf:resource="clusternode2"/>
-  <phys:ConsistsOfNodes rdf:resource="clusternode1"/>
-  <phys:ConsistsOfNodes rdf:resource="clusternode4"/>
-  <phys:ConsistsOfNodes rdf:resource="clusternode3"/>
-  <phys:ClusterHasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">202205-0503-0401-420b9546-fff9-4ef4-a0cf-552937f84a41</phys:ClusterHasID>
-</phys:Cluster>
-
-<phys:Kubernetes rdf:about="kubernetes2">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:PlatformHasDistribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K3s</phys:PlatformHasDistribution>
-</phys:Kubernetes>
 
 <phys:OS rdf:about="os3">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
-  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubuntu 20.04.3 LTS</phys:OperatingSystemHasImage>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
 </phys:OS>
 
 <phys:ClusterNode rdf:about="clusternode3">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram4"/>
-  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu4"/>
-  <phys:ClusterNodeIsHostedOn rdf:resource="singleboardunit3"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu3"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram3"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
   <phys:OperatesWith rdf:resource="os3"/>
   <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master</phys:hasRole>
 </phys:ClusterNode>
 
-<phys:Ram rdf:about="ram4">
+<phys:Ram rdf:about="ram3">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceAllocatableValue>
-  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceCapacityValue>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14749688Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15900664Ki</phys:RawComputationalResourceCapacityValue>
 </phys:Ram>
 
-<phys:CPU rdf:about="cpu4">
+<phys:CPU rdf:about="cpu3">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceAllocatableValue>
-  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceCapacityValue>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
 </phys:CPU>
 
 <phys:OS rdf:about="os4">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
-  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubuntu 20.04.3 LTS</phys:OperatingSystemHasImage>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
 </phys:OS>
 
 <phys:ClusterNode rdf:about="clusternode4">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram5"/>
-  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu5"/>
-  <phys:ClusterNodeIsHostedOn rdf:resource="singleboardunit3"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram4"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu4"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
   <phys:OperatesWith rdf:resource="os4"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14749688Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15900664Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:OS rdf:about="os5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu5"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram5"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
+  <phys:OperatesWith rdf:resource="os5"/>
   <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</phys:hasRole>
 </phys:ClusterNode>
 
 <phys:Ram rdf:about="ram5">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceAllocatableValue>
-  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceCapacityValue>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14921720Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16072696Ki</phys:RawComputationalResourceCapacityValue>
 </phys:Ram>
 
 <phys:CPU rdf:about="cpu5">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceAllocatableValue>
-  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceCapacityValue>
-</phys:CPU>
-
-<phys:SingleBoardUnit rdf:about="singleboardunit2">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:OperatesWith rdf:resource="linux2"/>
-  <phys:hasRawComputationalUnit rdf:resource="ram6"/>
-  <phys:hasRawComputationalUnit rdf:resource="cpu6"/>
-</phys:SingleBoardUnit>
-
-<phys:Ram rdf:about="ram6">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:withNumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:withNumValue>
-</phys:Ram>
-
-<phys:CPU rdf:about="cpu6">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:withNumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> 6</phys:withNumValue>
-</phys:CPU>
-
-<phys:Linux rdf:about="linux2">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</phys:Linux>
-
-<phys:Cluster rdf:about="cluster3">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:ClusterUsesPlatform rdf:resource="kubernetes3"/>
-  <phys:ConsistsOfNodes rdf:resource="clusternode5"/>
-  <phys:ConsistsOfNodes rdf:resource="clusternode2"/>
-  <phys:ConsistsOfNodes rdf:resource="clusternode1"/>
-  <phys:ConsistsOfNodes rdf:resource="clusternode3"/>
-  <phys:ConsistsOfNodes rdf:resource="clusternode6"/>
-  <phys:ConsistsOfNodes rdf:resource="clusternode4"/>
-  <phys:ClusterHasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">202205-0503-0425-37464b18-0f36-4ada-925e-400e43e672a8</phys:ClusterHasID>
-</phys:Cluster>
-
-<phys:Kubernetes rdf:about="kubernetes3">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:PlatformHasDistribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K3s</phys:PlatformHasDistribution>
-</phys:Kubernetes>
-
-<phys:OS rdf:about="os5">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
-  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubuntu 20.04.3 LTS</phys:OperatingSystemHasImage>
-</phys:OS>
-
-<phys:ClusterNode rdf:about="clusternode5">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram7"/>
-  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu7"/>
-  <phys:ClusterNodeIsHostedOn rdf:resource="singleboardunit3"/>
-  <phys:OperatesWith rdf:resource="os5"/>
-  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master</phys:hasRole>
-</phys:ClusterNode>
-
-<phys:Ram rdf:about="ram7">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceAllocatableValue>
-  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceCapacityValue>
-</phys:Ram>
-
-<phys:CPU rdf:about="cpu7">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceAllocatableValue>
-  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceCapacityValue>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
 </phys:CPU>
 
 <phys:OS rdf:about="os6">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
-  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubuntu 20.04.3 LTS</phys:OperatingSystemHasImage>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
 </phys:OS>
 
 <phys:ClusterNode rdf:about="clusternode6">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu8"/>
-  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram8"/>
-  <phys:ClusterNodeIsHostedOn rdf:resource="singleboardunit3"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram6"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu6"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
   <phys:OperatesWith rdf:resource="os6"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14749688Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15900664Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:OS rdf:about="os7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu7"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram7"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
+  <phys:OperatesWith rdf:resource="os7"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14921720Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16072696Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:Cluster rdf:about="cluster1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterUsesPlatform rdf:resource="openshift1"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode6"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode2"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode3"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode1"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode4"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode5"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode7"/>
+  <phys:ClusterHasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">202205-0503-2512-3358c4e6-feed-40ff-bf34-26b045c89f98</phys:ClusterHasID>
+</phys:Cluster>
+
+<phys:OpenShift rdf:about="openshift1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:PlatformHasDistribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OKD</phys:PlatformHasDistribution>
+</phys:OpenShift>
+
+<phys:OS rdf:about="os8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram8"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu8"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
+  <phys:OperatesWith rdf:resource="os8"/>
   <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</phys:hasRole>
 </phys:ClusterNode>
 
 <phys:Ram rdf:about="ram8">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceAllocatableValue>
-  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceCapacityValue>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14921720Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16072696Ki</phys:RawComputationalResourceCapacityValue>
 </phys:Ram>
 
 <phys:CPU rdf:about="cpu8">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceAllocatableValue>
-  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceCapacityValue>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
 </phys:CPU>
 
-<phys:SingleBoardUnit rdf:about="singleboardunit3">
+<phys:OS rdf:about="os9">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:OperatesWith rdf:resource="linux3"/>
-  <phys:hasRawComputationalUnit rdf:resource="ram9"/>
-  <phys:hasRawComputationalUnit rdf:resource="cpu9"/>
-</phys:SingleBoardUnit>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode9">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu9"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram9"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
+  <phys:OperatesWith rdf:resource="os9"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master</phys:hasRole>
+</phys:ClusterNode>
 
 <phys:Ram rdf:about="ram9">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:withNumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:withNumValue>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14749688Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15900664Ki</phys:RawComputationalResourceCapacityValue>
 </phys:Ram>
 
 <phys:CPU rdf:about="cpu9">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <phys:withNumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> 6</phys:withNumValue>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
 </phys:CPU>
 
-<phys:Linux rdf:about="linux3">
+<phys:OS rdf:about="os10">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</phys:Linux>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram10"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu10"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
+  <phys:OperatesWith rdf:resource="os10"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14749688Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15900664Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:OS rdf:about="os11">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode11">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu11"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram11"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
+  <phys:OperatesWith rdf:resource="os11"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram11">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14749688Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15900664Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu11">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:OS rdf:about="os12">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode12">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu12"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram12"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
+  <phys:OperatesWith rdf:resource="os12"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram12">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14921720Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16072696Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu12">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:OS rdf:about="os13">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode13">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram13"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu13"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
+  <phys:OperatesWith rdf:resource="os13"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram13">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14749688Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15900664Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu13">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:OS rdf:about="os14">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedora CoreOS 34</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode14">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu14"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram14"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="EC2"/>
+  <phys:OperatesWith rdf:resource="os14"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram14">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14921720Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16072696Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu14">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3500m</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:Cluster rdf:about="cluster2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterUsesPlatform rdf:resource="openshift2"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode14"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode6"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode1"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode4"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode13"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode7"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode8"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode2"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode10"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode9"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode5"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode12"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode11"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode3"/>
+  <phys:ClusterHasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">202205-0503-2645-7d818604-3b51-4ff9-ad14-b146d8c59c50</phys:ClusterHasID>
+</phys:Cluster>
+
+<phys:OpenShift rdf:about="openshift2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:PlatformHasDistribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OKD</phys:PlatformHasDistribution>
+</phys:OpenShift>
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">

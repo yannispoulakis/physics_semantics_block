@@ -1,8 +1,9 @@
-from rsemantics.utils import cluster_already_exists, is_json
+from rsemantics.utils import is_json
 from rsemantics.r2onto import r2onto
 from rsemantics.SemanticRules import service_onto_rules
-import json
-from flask import Flask, request, render_template
+
+from flask import Flask, request, render_template, Response
+
 from owlready2 import *
 import logging
 import ontospy
@@ -42,7 +43,7 @@ def register_resource():
     """Registers a new cluster. The input body should consist of three different jsons"""
 
     if request.method == "GET":
-        return render_template('resource_registration_visual.html')
+        return render_template('main/resource_registration_visual.html')
 
     if request.method == "POST":
         if is_json(request.get_data()):
@@ -61,14 +62,67 @@ def register_resource():
         for idx, nested_json in enumerate(post_body):
             parser = getattr(r2, "{}_onto".format(nested_json_types[idx]))
             parser(post_body[nested_json])
+
         r2.connect_classes()
         r2.onto.save("cluster_ontology", format="rdfxml")
 
         sr = service_onto_rules(r2.onto)
         sr.add_locality()
+
         print(r2.onto.cluster1.hasLocality)
 
         return "200"
+
+
+@app.route("/api/register-resource", methods=['GET', 'POST'])
+def register_resource_api():
+    """Registers a new cluster. The input body should consist of three different jsons"""
+
+    if request.method == "GET":
+        return "The API route for registering a cluster."
+
+    if request.method == "POST":
+        if is_json(request.get_data()):
+            pass
+        else:
+            return "422 - Unprocessable Entity"
+        r2 = r2onto()
+
+        # Read request parameters and body
+        json1_type = request.args.get('1')
+        json2_type = request.args.get('2')
+        json3_type = request.args.get('3')
+        nested_json_types = [json1_type, json2_type, json3_type]
+        post_body = request.get_json()
+
+        for idx, nested_json in enumerate(post_body):
+            parser = getattr(r2, "{}_onto".format(nested_json_types[idx]))
+            parser(post_body[nested_json])
+
+        r2.connect_classes()
+        r2.onto.save("cluster_ontology", format="rdfxml")
+
+        sr = service_onto_rules(r2.onto)
+        sr.add_locality()
+
+        print(r2.onto.cluster1.hasLocality)
+
+        return "200"
+
+
+@app.route("/ontology-raw", methods=['GET', 'POST'])
+def onto_raw():
+    with open("physics_ontology_v12.owl", "r", encoding="utf8") as f:
+        data = f.read()
+
+    for line in data:
+        print(line)
+        break
+    return  Response(data, mimetype="text/xml")
+
+
+
+
 
 
 if __name__ == "__main__":

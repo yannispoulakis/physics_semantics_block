@@ -14,7 +14,7 @@ class r2onto:
     def ec2_onto(self, instances):
         instances = instances["Reservations"][0]["Instances"]
         cp = self.onto.CloudProvider("AWS")
-        cs = self.onto.Cloud_Service("EC2")
+        cs = self.onto.CloudService("EC2")
         cp.providesCloudService = [cs]
         cs.CloudServiceLocation = instances[0]["Placement"]["AvailabilityZone"]
         cs.CloudServiceInstanceID = [instances[0]["InstanceId"]]
