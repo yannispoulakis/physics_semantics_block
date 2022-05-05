@@ -5,7 +5,7 @@ from datetime import datetime
 from uuid import uuid4
 
 class r2onto:
-    def __init__(self, onto_path="physics_ontology_v9.owl"):
+    def __init__(self, onto_path="physics_ontology_v12.owl"):
         self.onto = get_ontology(onto_path).load()
         self.cluster = ""
         self.host_resource = ''

@@ -56,7 +56,7 @@ def render_register_resource():
         return render_template("resource_registered.html")
 
     elif request.method == "GET":
-        return render_template("test_collapsible.html")
+        return render_template("resource_registration_visual.html")
 
 
 @app.route("/add_resource", methods=["POST"])

@@ -1,0 +1,1786 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:phys="http://www.physics-h2020.eu/physics/"
+         xmlns="http://www.physics-h2020.eu/physics/">
+
+<owl:Ontology rdf:about="http://www.physics-h2020.eu/physics">
+  <owl:imports rdf:resource="https://raw.github.com/wf4ever/ro/0.1.1/wfdesc.owl"/>
+  <owl:versionIRI rdf:resource="1.0.0"/>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="ClusterIsDeployedOn">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="ClusterNodeHasComputationalUnit">
+  <rdfs:domain rdf:resource="ClusterNode"/>
+  <rdfs:range rdf:resource="RawComputationalResource"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="ClusterNodeIsHostedOn">
+  <rdfs:domain rdf:resource="ClusterNode"/>
+  <rdfs:range rdf:resource="ResourceUnit"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="ClusterUsesPlatform">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="ConsistsOfNodes">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="OperatesWith">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="ClusterNode"/>
+  <rdfs:range rdf:resource="OS"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="ResourceUnitHasRawComputationalResource">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="appExecutionMode">
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="ExecutionMode"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="callsDependency">
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="SoftwareLibrary"/>
+  <rdfs:subPropertyOf rdf:resource="hasDependency"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="cloudAuthentication">
+  <rdfs:range rdf:resource="Authentication"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="clusterNode">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdfs:domain rdf:resource="Cluster"/>
+  <owl:inverseOf rdf:resource="partOfCluster"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="deployedOnResource">
+  <rdfs:domain rdf:resource="DeployableArtifact"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="deterioratesQoS">
+  <rdfs:domain rdf:resource="Pattern"/>
+  <rdfs:range rdf:resource="QoS"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="enhancesQoS">
+  <rdfs:domain rdf:resource="Pattern"/>
+  <rdfs:range rdf:resource="QoS"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="exposesAPI">
+  <rdfs:domain rdf:resource="Service"/>
+  <rdfs:range rdf:resource="API"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasApplicationRequirement">
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="AppRequirement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasCallingDependency">
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="SoftwareFramework"/>
+  <rdfs:subPropertyOf rdf:resource="hasDependency"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasDependency">
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasFunction">
+  <rdfs:domain rdf:resource="Flow"/>
+  <rdfs:range rdf:resource="Function"/>
+  <rdfs:subPropertyOf rdf:resource="hasNode"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasImage">
+  <rdfs:domain rdf:resource="StandaloneContainer"/>
+  <rdfs:range rdf:resource="SoftwareImage"/>
+  <rdfs:subPropertyOf rdf:resource="hasTemplate"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasInstance">
+  <rdfs:domain rdf:resource="Template"/>
+  <rdfs:range rdf:resource="Instance"/>
+  <owl:inverseOf rdf:resource="hasTemplate"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasNode">
+  <rdfs:domain rdf:resource="Flow"/>
+  <rdfs:range rdf:resource="WorkflowNode"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasNodeInput">
+  <rdfs:domain rdf:resource="WorkflowNode"/>
+  <rdfs:range rdf:resource="ApplicationInterface"/>
+  <owl:inverseOf rdf:resource="isNodeInputOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasNodeOutput">
+  <rdfs:domain rdf:resource="WorkflowNode"/>
+  <rdfs:range rdf:resource="ApplicationInterface"/>
+  <owl:inverseOf rdf:resource="isNodeOutputOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasOwner">
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="User"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasPlatformDependency">
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:subPropertyOf rdf:resource="hasDependency"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasQoSMetric">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="QoS"/>
+  <rdfs:range rdf:resource="QoSMetric"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasRawComputationalUnit">
+  <rdfs:domain rdf:resource="ClusterNode"/>
+  <rdfs:domain rdf:resource="ResourceUnit"/>
+  <rdfs:range rdf:resource="RawComputationalResource"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasResourceAttribute">
+  <rdfs:range rdf:resource="ResourceAttribute"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasRuntime">
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="Runtime"/>
+  <rdfs:subPropertyOf rdf:resource="hasDependency"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasSLA">
+  <rdfs:range rdf:resource="SLA"/>
+  <owl:inverseOf rdf:resource="slaProvider"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasSoftwareArtifact">
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="DeployableArtifact"/>
+  <rdfs:subPropertyOf rdf:resource="hasInstance"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="hasTemplate">
+  <rdfs:domain rdf:resource="Instance"/>
+  <rdfs:range rdf:resource="Template"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="includesFlow"/>
+
+<owl:ObjectProperty rdf:about="includesService"/>
+
+<owl:ObjectProperty rdf:about="includesSubflow">
+  <rdfs:domain rdf:resource="Flow"/>
+  <rdfs:range rdf:resource="SubFlow"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/wf4ever/wfdesc#hasSubWorkflow"/>
+  <rdfs:subPropertyOf rdf:resource="includesFlow"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="isNodeInputOf">
+  <rdfs:domain rdf:resource="ApplicationInterface"/>
+  <rdfs:range rdf:resource="WorkflowNode"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="isNodeOutputOf">
+  <rdfs:domain rdf:resource="ApplicationInterface"/>
+  <rdfs:range rdf:resource="WorkflowNode"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="manages">
+  <rdfs:domain rdf:resource="Management"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="managesApplication">
+  <rdfs:domain rdf:resource="ApplicationManagement"/>
+  <rdfs:range rdf:resource="Application"/>
+  <rdfs:subPropertyOf rdf:resource="manages"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="managesResource">
+  <rdfs:domain rdf:resource="ResourceManagement"/>
+  <rdfs:subPropertyOf rdf:resource="manages"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="partOfCluster">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="Cluster"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="providesCloudService">
+  <rdfs:domain rdf:resource="CloudProvider"/>
+  <rdfs:range rdf:resource="CloudService"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="serverlessDeployedOn"/>
+
+<owl:ObjectProperty rdf:about="slaProvider">
+  <rdfs:domain rdf:resource="SLA"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="swArtifactExecutionMode">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="DeployableArtifact"/>
+  <rdfs:range rdf:resource="ExecutionMode"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="usesAuthentication">
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="Authentication"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="usesConnectivity">
+  <rdfs:domain rdf:resource="Service"/>
+  <rdfs:range rdf:resource="ConnectivityProtocol"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="usesSecurity">
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="Security"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="ClusterHasID">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="OperatingSystemHasArchitecture">
+  <rdfs:domain rdf:resource="OS"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="OperatingSystemHasImage">
+  <rdfs:domain rdf:resource="OS"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="OperatingSystemHasVersion">
+  <rdfs:domain rdf:resource="OS"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="PlatformHasDistribution">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Platform"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="PlatformHasVersion">
+  <rdfs:domain rdf:resource="Platform"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="RawComputationalResourceAllocatableValue">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="RawComputationalResourceCapacityValue">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="cloudAPIVersion">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="cloudServiceInstanceID">
+  <rdfs:domain rdf:resource="Compute"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="cloudServiceInstanceType">
+  <rdfs:domain rdf:resource="Compute"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="cloudServiceName">
+  <rdfs:domain rdf:resource="CloudService"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="cloudServicePrivateIP">
+  <rdfs:domain rdf:resource="Compute"/>
+  <rdfs:domain rdf:resource="Database"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="clusterLocality">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Cluster"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="dataDeletionTime">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Privacy"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="dataEncryptedInStorage">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Confidentiality"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="dataEncryptedInTransit">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Confidentiality"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="dataGlobalLocationAllowed">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Privacy"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="dataMustBeAnonymized">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Privacy"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="finalCode">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Function"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="funcCode">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Function"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="hasArchitecture">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Cluster"/>
+  <rdfs:domain rdf:resource="ClusterNode"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="hasEnergyScore">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Cluster"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="hasJSONDescription">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="hasPerformanceScore">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Cluster"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="hasResilienceScore">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Cluster"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="hasRole">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="ClusterNode"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="initCode">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Function"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="isBlackBox">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="isLocated">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Cluster"/>
+  <rdfs:domain rdf:resource="Compute"/>
+  <rdfs:domain rdf:resource="Database"/>
+  <rdfs:domain rdf:resource="Storage"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="isTopLevelComposite">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="Application"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="label">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="value">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="withMaxValue">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="DeploymentAttribute"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="withMinValue">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="DeploymentAttribute"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="withNumValue">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="DeploymentAttribute"/>
+  <rdfs:domain rdf:resource="RawComputationalResource"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:subPropertyOf rdf:resource="value"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="withPossibleValue">
+  <rdfs:domain rdf:resource="DeploymentAttribute"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="withPreferedValue">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="DeploymentAttribute"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="withValue">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="DeploymentAttribute"/>
+  <rdfs:domain rdf:resource="RawComputationalResource"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="value"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="withVariance">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="DeploymentAttribute"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="http://ontology.ethereal.cz/irao/Benchmark">
+  <rdfs:isDefinedBy rdf:resource="http://ontology.ethereal.cz/irao"/>
+  <rdfs:comment xml:lang="en">A benchmark is a type of comparison and measuring with metrics, producing datasets and algorithms for comprehensive and systematic evaluation of existing and future systems</rdfs:comment>
+  <rdfs:label xml:lang="en">Benchmark</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="API">
+  <rdfs:subClassOf rdf:resource="ApplicationInterface"/>
+</owl:Class>
+
+<owl:Class rdf:about="Android">
+  <rdfs:subClassOf rdf:resource="OS"/>
+</owl:Class>
+
+<owl:Class rdf:about="AppRequirement">
+  <rdfs:subClassOf rdf:resource="DeploymentAttribute"/>
+</owl:Class>
+
+<owl:Class rdf:about="Application">
+  <rdfs:subClassOf rdf:resource="http://purl.org/wf4ever/wfdesc#Process"/>
+</owl:Class>
+
+<owl:Class rdf:about="ApplicationInterface"/>
+
+<owl:Class rdf:about="ApplicationManagement">
+  <rdfs:subClassOf rdf:resource="Management"/>
+</owl:Class>
+
+<owl:Class rdf:about="AuthToken">
+  <rdfs:subClassOf rdf:resource="Authentication"/>
+</owl:Class>
+
+<owl:Class rdf:about="Authentication">
+  <rdfs:subClassOf rdf:resource="ParameterGroup"/>
+</owl:Class>
+
+<owl:Class rdf:about="CPU">
+  <rdfs:subClassOf rdf:resource="RawComputationalResource"/>
+  <owl:disjointWith rdf:resource="Ram"/>
+</owl:Class>
+
+<owl:Class rdf:about="CloudPlatform">
+  <rdfs:subClassOf rdf:resource="Platform"/>
+</owl:Class>
+
+<owl:Class rdf:about="CloudProvider"/>
+
+<owl:Class rdf:about="CloudService"/>
+
+<owl:Class rdf:about="CloudStack">
+  <rdfs:subClassOf rdf:resource="CloudPlatform"/>
+</owl:Class>
+
+<owl:Class rdf:about="Cluster"/>
+
+<owl:Class rdf:about="ClusterNode"/>
+
+<owl:Class rdf:about="Compute">
+  <rdfs:subClassOf rdf:resource="CloudService"/>
+</owl:Class>
+
+<owl:Class rdf:about="Computer">
+  <rdfs:subClassOf rdf:resource="PhysicalResourceUnit"/>
+</owl:Class>
+
+<owl:Class rdf:about="Confidentiality">
+  <rdfs:subClassOf rdf:resource="Security"/>
+</owl:Class>
+
+<owl:Class rdf:about="ConnectivityProtocol">
+  <rdfs:subClassOf rdf:resource="ApplicationInterface"/>
+</owl:Class>
+
+<owl:Class rdf:about="Credentials">
+  <rdfs:subClassOf rdf:resource="Authentication"/>
+</owl:Class>
+
+<owl:Class rdf:about="Database">
+  <rdfs:subClassOf rdf:resource="CloudService"/>
+</owl:Class>
+
+<owl:Class rdf:about="Debian">
+  <rdfs:subClassOf rdf:resource="Linux"/>
+</owl:Class>
+
+<owl:Class rdf:about="DeployableArtifact"/>
+
+<owl:Class rdf:about="DeploymentAttribute">
+  <owl:disjointUnionOf>
+    <rdf:Description>
+      <rdf:first rdf:resource="Locality"/>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first rdf:resource="QoS"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="RawComputationalResource"/>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </owl:disjointUnionOf>
+</owl:Class>
+
+<owl:Class rdf:about="Deployment_Model"/>
+
+<owl:Class rdf:about="ExecutionMode"/>
+
+<owl:Class rdf:about="ExternalService">
+  <rdfs:subClassOf rdf:resource="Service"/>
+  <owl:disjointWith rdf:resource="StandaloneContainer"/>
+</owl:Class>
+
+<owl:Class rdf:about="Flow">
+  <rdfs:subClassOf rdf:resource="http://purl.org/wf4ever/wfdesc#WorkflowInstance"/>
+  <rdfs:subClassOf rdf:resource="Application"/>
+</owl:Class>
+
+<owl:Class rdf:about="Function">
+  <rdfs:subClassOf rdf:resource="Application"/>
+</owl:Class>
+
+<owl:Class rdf:about="Hybrid">
+  <rdfs:subClassOf rdf:resource="Deployment_Model"/>
+</owl:Class>
+
+<owl:Class rdf:about="Hypervisor"/>
+
+<owl:Class rdf:about="Instance"/>
+
+<owl:Class rdf:about="IoS">
+  <rdfs:subClassOf rdf:resource="OS"/>
+</owl:Class>
+
+<owl:Class rdf:about="IoT">
+  <rdfs:subClassOf rdf:resource="CloudService"/>
+</owl:Class>
+
+<owl:Class rdf:about="KNative">
+  <rdfs:subClassOf rdf:resource="ServerlessPlatform"/>
+</owl:Class>
+
+<owl:Class rdf:about="Kubernetes">
+  <rdfs:subClassOf rdf:resource="CloudPlatform"/>
+</owl:Class>
+
+<owl:Class rdf:about="LibraryNode">
+  <rdfs:subClassOf rdf:resource="SoftwareLibrary"/>
+</owl:Class>
+
+<owl:Class rdf:about="Linux">
+  <rdfs:subClassOf rdf:resource="OS"/>
+</owl:Class>
+
+<owl:Class rdf:about="Locality"/>
+
+<owl:Class rdf:about="MacOS">
+  <rdfs:subClassOf rdf:resource="OS"/>
+</owl:Class>
+
+<owl:Class rdf:about="Management"/>
+
+<owl:Class rdf:about="MessageWire">
+  <rdfs:subClassOf rdf:resource="ApplicationInterface"/>
+</owl:Class>
+
+<owl:Class rdf:about="Messaging">
+  <rdfs:subClassOf rdf:resource="CloudService"/>
+</owl:Class>
+
+<owl:Class rdf:about="Miscellaneous">
+  <rdfs:subClassOf rdf:resource="CloudService"/>
+</owl:Class>
+
+<owl:Class rdf:about="Networking">
+  <rdfs:subClassOf rdf:resource="CloudService"/>
+</owl:Class>
+
+<owl:Class rdf:about="OS"/>
+
+<owl:Class rdf:about="OpenFaas">
+  <rdfs:subClassOf rdf:resource="ServerlessPlatform"/>
+</owl:Class>
+
+<owl:Class rdf:about="OpenShift">
+  <rdfs:subClassOf rdf:resource="CloudPlatform"/>
+</owl:Class>
+
+<owl:Class rdf:about="OpenStack">
+  <rdfs:subClassOf rdf:resource="CloudPlatform"/>
+</owl:Class>
+
+<owl:Class rdf:about="OpenWhisk">
+  <rdfs:subClassOf rdf:resource="ServerlessPlatform"/>
+</owl:Class>
+
+<owl:Class rdf:about="ParameterGroup"/>
+
+<owl:Class rdf:about="Pattern">
+  <rdfs:subClassOf rdf:resource="SubFlow"/>
+</owl:Class>
+
+<owl:Class rdf:about="PerformanceBenchmark">
+  <rdfs:subClassOf rdf:resource="http://ontology.ethereal.cz/irao/Benchmark"/>
+</owl:Class>
+
+<owl:Class rdf:about="PhysicalResourceUnit">
+  <rdfs:subClassOf rdf:resource="ResourceUnit"/>
+  <owl:disjointWith rdf:resource="Virtual_Resource_Unit"/>
+</owl:Class>
+
+<owl:Class rdf:about="Platform"/>
+
+<owl:Class rdf:about="Privacy">
+  <rdfs:subClassOf rdf:resource="Security"/>
+</owl:Class>
+
+<owl:Class rdf:about="Private">
+  <rdfs:subClassOf rdf:resource="Deployment_Model"/>
+</owl:Class>
+
+<owl:Class rdf:about="Public">
+  <rdfs:subClassOf rdf:resource="Deployment_Model"/>
+</owl:Class>
+
+<owl:Class rdf:about="QoS"/>
+
+<owl:Class rdf:about="QoSMetric"/>
+
+<owl:Class rdf:about="Ram">
+  <rdfs:subClassOf rdf:resource="RawComputationalResource"/>
+</owl:Class>
+
+<owl:Class rdf:about="RawComputationalResource"/>
+
+<owl:Class rdf:about="ResourceAttribute">
+  <rdfs:subClassOf rdf:resource="DeploymentAttribute"/>
+</owl:Class>
+
+<owl:Class rdf:about="ResourceManagement">
+  <rdfs:subClassOf rdf:resource="Management"/>
+</owl:Class>
+
+<owl:Class rdf:about="ResourceUnit"/>
+
+<owl:Class rdf:about="Runtime"/>
+
+<owl:Class rdf:about="SLA"/>
+
+<owl:Class rdf:about="Security">
+  <rdfs:subClassOf rdf:resource="ParameterGroup"/>
+</owl:Class>
+
+<owl:Class rdf:about="ServerlessPlatform">
+  <rdfs:subClassOf rdf:resource="Platform"/>
+</owl:Class>
+
+<owl:Class rdf:about="Service">
+  <rdfs:subClassOf rdf:resource="Application"/>
+</owl:Class>
+
+<owl:Class rdf:about="SingleBoardUnit">
+  <rdfs:subClassOf rdf:resource="PhysicalResourceUnit"/>
+</owl:Class>
+
+<owl:Class rdf:about="SoftwareFramework"/>
+
+<owl:Class rdf:about="SoftwareImage">
+  <rdfs:subClassOf rdf:resource="DeployableArtifact"/>
+</owl:Class>
+
+<owl:Class rdf:about="SoftwareLibrary"/>
+
+<owl:Class rdf:about="StandaloneContainer">
+  <rdfs:subClassOf rdf:resource="Service"/>
+</owl:Class>
+
+<owl:Class rdf:about="Storage">
+  <rdfs:subClassOf rdf:resource="CloudService"/>
+</owl:Class>
+
+<owl:Class rdf:about="SubFlow">
+  <rdfs:subClassOf rdf:resource="Flow"/>
+</owl:Class>
+
+<owl:Class rdf:about="Template"/>
+
+<owl:Class rdf:about="User"/>
+
+<owl:Class rdf:about="VirtualBox">
+  <rdfs:subClassOf rdf:resource="Hypervisor"/>
+</owl:Class>
+
+<owl:Class rdf:about="Virtual_Resource_Unit">
+  <rdfs:subClassOf rdf:resource="ResourceUnit"/>
+</owl:Class>
+
+<owl:Class rdf:about="WIndows">
+  <rdfs:subClassOf rdf:resource="OS"/>
+</owl:Class>
+
+<owl:Class rdf:about="WorkflowNode">
+  <owl:disjointUnionOf>
+    <rdf:Description>
+      <rdf:first rdf:resource="Function"/>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first rdf:resource="LibraryNode"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="Service"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="SubFlow"/>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </owl:disjointUnionOf>
+</owl:Class>
+
+<owl:Class rdf:about="AI_&amp;_Machine_Learning">
+  <rdfs:subClassOf rdf:resource="CloudService"/>
+</owl:Class>
+
+<owl:Class rdf:about="Big_Data_&amp;_Analytics">
+  <rdfs:subClassOf rdf:resource="CloudService"/>
+</owl:Class>
+
+<phys:ExecutionMode rdf:about="NodeREDAction">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</phys:ExecutionMode>
+
+<phys:ExecutionMode rdf:about="OpenWhiskSequence">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</phys:ExecutionMode>
+
+<phys:ExecutionMode rdf:about="ServiceExecution">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</phys:ExecutionMode>
+
+<rdf:Description rdf:about="http://purl.org/wf4ever/wfdesc#Process">
+  <rdfs:label xml:lang="en">wfdesc: Process</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.org/wf4ever/wfdesc#WorkflowInstance">
+  <rdfs:label xml:lang="en">wfdesc: Workflow Instance</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.org/wf4ever/wfdesc#Workflow">
+  <rdfs:label xml:lang="en">wfdesc: Workflow</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="API">
+  <rdfs:comment xml:lang="en">An API exposed by a Service and consumed by a Service or Function or Flow.</rdfs:comment>
+  <rdfs:label xml:lang="en">Application Programming Interface</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="AppRequirement">
+  <rdfs:comment xml:lang="en">A requirement that an Application individual has in order to be deployed.
+
+This requirement can be only one of the following: "Raw Computational Resource", "Locality" or "QoS".</rdfs:comment>
+  <rdfs:label xml:lang="en">Application Requirement</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Application">
+  <rdfs:comment xml:lang="en">The PHYSICS Application class encompasses any PIECE OF LOGIC that is deployable to the continuum, regardless of its size and characteristics.
+
+An Application individual has to be a member/instance of either of the subclasses of Application class. Otherwise an Application is a top-level package that is a Composition of several individuals that are members of its subclasses.
+
+The only way for an application to not be a member of the Application subclasses, and not be composed of other components, is for an App that is considered a black box. Direct usage of blackboxes should be avoided. Best use applications that are External Services, and avoid using or referencing components that are Blackboxes.</rdfs:comment>
+  <rdfs:label xml:lang="en">Application</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="ApplicationInterface">
+  <rdfs:comment xml:lang="en">The interface that an application, or part of application, exposes.</rdfs:comment>
+  <rdfs:label xml:lang="en">Application Interface</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="ApplicationManagement">
+  <rdfs:comment xml:lang="en">A management entity for Applications or Application Compopents.
+
+Examples include Orchestrators, Choreography platforms, CI/CD, etc.</rdfs:comment>
+  <rdfs:label xml:lang="en">Application Management Entity</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="AuthToken">
+  <rdfs:comment xml:lang="en">A kind of Authentication scheme that uses a Token for identifying and authenticating a user.</rdfs:comment>
+  <rdfs:label xml:lang="en">Authentication Token</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Authentication">
+  <rdfs:comment xml:lang="en">An authentication Scheme</rdfs:comment>
+  <rdfs:label xml:lang="en">Authentication</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="CloudProvider">
+  <rdfs:comment xml:lang="en">Public Cloud Provider
+
+To be connection point with other ontology?</rdfs:comment>
+  <rdfs:label xml:lang="en">Cloud Provider</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="CloudService">
+  <rdfs:comment>Any type of service that is provided in a public cloud. Different vendors provide different services of various types such as storage, compute or case specific.</rdfs:comment>
+  <rdfs:label>Cloud Service</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Cluster">
+  <rdfs:comment xml:lang="en">Computer Cluster</rdfs:comment>
+  <rdfs:label xml:lang="en">Cluster</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="ClusterIsDeployedOn">
+  <rdfs:label>Cluster Is Deployed On</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="ClusterUsesPlatform">
+  <rdfs:label>Cluster Uses Platform</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Confidentiality">
+  <rdfs:comment xml:lang="en">Grouping of Confidentiality-related properties. The given confidentiality parameters group can either be expected or provided by an entity.</rdfs:comment>
+  <rdfs:label xml:lang="en">Confidentiality</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="ConnectivityProtocol">
+  <rdfs:comment xml:lang="en">A connectivity protocol.
+
+E.g., for databases the xDBC</rdfs:comment>
+  <rdfs:label xml:lang="en">Connectivity Protocol</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="ConsistsOfNodes">
+  <rdfs:label>Cluster Consists of Nodes</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Credentials">
+  <rdfs:comment xml:lang="en">User Credentials as Authentication scheme</rdfs:comment>
+  <rdfs:label xml:lang="en">Credentials</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="DeployableArtifact">
+  <rdfs:comment xml:lang="en">A Software Artefact that can be deployed on some kind of resource.</rdfs:comment>
+  <rdfs:label xml:lang="en">Deployable Software Artifact</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="DeploymentAttribute">
+  <rdfs:comment xml:lang="en">An attribute or parameter which explains or measures some facet of either deploying an application, or resources available for application deployment.
+
+It is meant to be a superclass of "Resource Attribute" and "Application Requirement". An individual has either a specific value, a range of values, or some possible values, or maybe with some preferred value.
+
+Properties of the classes that constitute the disjoint union of this class may be sub-properties of the properties of this class in many cases.</rdfs:comment>
+  <rdfs:label xml:lang="en">Deployment Attribute</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Deployment_Model">
+  <rdfs:comment>This class refers to the cloud availability defining wether the deployment is performed on private, public or hybrid cloud.</rdfs:comment>
+  <rdfs:label>Deployment Model</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="ExecutionMode">
+  <rdfs:comment xml:lang="en">Mode of execution for an Application (or Subclass). 
+
+Note: Subcomponents of an Application individual may define different modes of execution.
+
+Note: It is acceptable to be more than one modes of execution for an Application. There is one Software Artifact for one Execution mode.</rdfs:comment>
+  <rdfs:label xml:lang="en">Execution Mode</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="ExternalService">
+  <rdfs:comment xml:lang="en">A Service that is included in some workflow, or for a Service that is a mixin or composition, that is not controlled by the same environment.</rdfs:comment>
+  <rdfs:label xml:lang="en">External Service</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Flow">
+  <rdfs:comment xml:lang="en">Node-Red or Application composer Flow</rdfs:comment>
+  <rdfs:label xml:lang="en">Flow</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Function">
+  <rdfs:comment xml:lang="en">Function in FaaS terms.</rdfs:comment>
+  <rdfs:label xml:lang="en">Function</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Instance">
+  <rdfs:comment xml:lang="en">An Instance created based on some Template.
+
+Encompasses common cases of instantiation. In programming a class has some objects as instances. In virtualization, a VM image has a running VM as an instance, an Image has a running Cointainer as an instance, and so on.
+
+This class is a high-level abstraction of all kinds of Instances.</rdfs:comment>
+  <rdfs:label xml:lang="en">Instance</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="LibraryNode">
+  <rdfs:comment xml:lang="en">A software library, or part of a library, packaged as a complete Node-RED or visual application composition tool node, that can be embedded as a workflow node.</rdfs:comment>
+  <rdfs:label xml:lang="en">Software Library Node</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Linux">
+  <rdfs:label xml:lang="en">Linux Distribution</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Locality">
+  <rdfs:comment xml:lang="en">Resource Locality, e.g. the region of a Data Center or the location/area of an Edge or Service Island. When it comes to Applications, it means the locality the deployable item requires, in terms of region, or named network.</rdfs:comment>
+  <rdfs:label xml:lang="en">Locality</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Management">
+  <rdfs:comment xml:lang="en">This class encompasses management entities, commonly accessible trhough APIs, that manage Resources or Applications (and/or their components).
+
+Management Entities include management systems, orchestrators, operations support platforms, etc. for Applications or Resources. The common characteristic of these management entities is their (softwarized) configurability via APIs.</rdfs:comment>
+  <rdfs:label xml:lang="en">Management Entity</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="MessageWire">
+  <rdfs:comment xml:lang="en">A wire between two Functions or other Node types. A message wire is an output of a function or node, and then functions or nodes may have this as input.</rdfs:comment>
+  <rdfs:label xml:lang="en">Message Wire</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="OS">
+  <rdfs:label xml:lang="en">Operating System</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="OperatesWith">
+  <rdfs:label>Cluster Node Operates With Operating System</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="ParameterGroup">
+  <rdfs:comment xml:lang="en">A group of parameters, that pertains to a single entity and a specific field. The field that the parameters pertain to, such as Configuration, Authentication, Security, etc. is denoted by the corresponding subclass of this class. The parameters have only one specific value, and each parameter is a Data Property attached to the subclass.</rdfs:comment>
+  <rdfs:label xml:lang="en">Parameter Group</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Pattern">
+  <rdfs:comment xml:lang="en">Pattern as defined in the context of the PHYSICS project. It is a skeleton implementation of a design pattern. It can be selected from a pallete in the visual developement environment, included in a Flow, and configured to be appropriate for the flow.</rdfs:comment>
+  <rdfs:label xml:lang="en">Pattern</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="PerformanceBenchmark">
+  <rdfs:comment xml:lang="en">A Performance Benchmark is done so as to be able to predict, assess and compare the Performance of Applications deployed on Resources.</rdfs:comment>
+  <rdfs:label xml:lang="en">Performance Benchmark</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Privacy">
+  <rdfs:comment xml:lang="en">Grouping all properties of Privacy domain for an entity.</rdfs:comment>
+  <rdfs:label xml:lang="en">Privacy</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="QoS">
+  <rdfs:comment xml:lang="en">Quality of Service parameter that a Resource provides, or an Application requires.</rdfs:comment>
+  <rdfs:label xml:lang="en">QoS</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="QoSMetric">
+  <rdfs:comment xml:lang="en">A QoS Metric gives meaning to the values of a QoS (attribute or requirement).
+
+Examples include "requests per second", "frames per second", "bits per second", "duration in seconds" etc.
+
+Note that individuals of this class may also be members of other classes, depending on the domain.</rdfs:comment>
+  <rdfs:label xml:lang="en">QoS Metric</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="RawComputationalResource">
+  <rdfs:comment xml:lang="en">Computational Resource, e.g. a processing unit like CPU, GPU, TPU or temporary storage i.e. RAM, or Persistent Storage like HDD or SSD, or a MicroController like an Arduino, or a specialized card, or FPGA, or ASIC.</rdfs:comment>
+  <rdfs:label xml:lang="en">Raw Computational Resource</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="ResourceAttribute">
+  <rdfs:comment xml:lang="en">An attribute that expresses the Resource offerring.
+
+This can be one of the following: "Raw Application Resource", "Locality", "QoS".</rdfs:comment>
+  <rdfs:label xml:lang="en">Resource Attribute</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="ResourceManagement">
+  <rdfs:comment xml:lang="en">This class encompasses management entities for Resource types. Most commonly access to these managment entities is through some API.
+
+Such management entities include Cloud platforms (through Cloud API), Hypervisors (through native API), MaaS (through its MaaS API), Network Controllers and Management Systems (through Northbound APIs) etc.</rdfs:comment>
+  <rdfs:label xml:lang="en">Resource Management Entity</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Runtime">
+  <rdfs:label xml:lang="en">A software runtime environment.
+
+Examples: Node.js, Python, JVM, GraalVM, ART, etc.</rdfs:label>
+  <rdfs:label xml:lang="en">Runtime</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="SLA">
+  <rdfs:label xml:lang="en">Service Level Aggreement</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Security">
+  <rdfs:comment xml:lang="en">A grouping of Security-related properties, expected or provided.</rdfs:comment>
+  <rdfs:label xml:lang="en">Security</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="SingleBoardUnit">
+  <rdfs:comment>This class refers to single board units acting usually as edge devices in the resource cluster concept.</rdfs:comment>
+  <rdfs:label>Single Board Unit</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="SoftwareFramework">
+  <rdfs:comment xml:lang="en">A Software Framework.
+
+This class encompasses Software Frameworks that are used in application development.
+
+Important: An individual of this class signifies that this framework CALLS a specific piece of code, i.e. an Application or part of an Application, in the terms of the PHYSICS ontology.</rdfs:comment>
+  <rdfs:label xml:lang="en">Software Framework</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="SoftwareImage">
+  <rdfs:comment xml:lang="en">The Software Image can be either a reference to an image from a repository (preferable), or reference to a Dockerfile, or equivalent.</rdfs:comment>
+  <rdfs:label xml:lang="en">Software Image</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="SoftwareLibrary">
+  <rdfs:comment xml:lang="en">A software library.
+
+This class encompasses libraries, or parts of libraries, that are callable from a developer's code.</rdfs:comment>
+  <rdfs:label xml:lang="en">Software Library</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="StandaloneContainer">
+  <rdfs:comment xml:lang="en">A container that is managed in the same environment as the platform, and acts as a Service.</rdfs:comment>
+  <rdfs:label xml:lang="en">Standalone Container</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="SubFlow">
+  <rdfs:comment xml:lang="en">Node-Red or Application composer sub-flow. A flow, but reusable, as it can be included in other flows, and with set inputs and outputs.
+
+The “Sub-Flow” class signifies the packaging of flows as reusable sub-flows in other flows and the mandatory message wire inputs and/or outputs.</rdfs:comment>
+  <rdfs:label xml:lang="en">Sub-Flow</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="Template">
+  <rdfs:comment xml:lang="en">A Template is the basis for the creation of Instances.
+
+Encompasses common cases of templates used for instantiation. In programming a class is a Template which has some objects as instances. In virtualization, a VM image is a Template which has a running VM as an instance, an Image is a Template that has a running Container as an Instance, and so on.
+
+This class is a high-level abstraction of all kinds of Templates for Instances.</rdfs:comment>
+  <rdfs:label xml:lang="en">Template</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="User">
+  <rdfs:comment xml:lang="en">A User that uses a platform that abides to the PHYSICS ontology.</rdfs:comment>
+  <rdfs:label xml:lang="en">Platform User</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="WorkflowNode">
+  <rdfs:comment xml:lang="en">A node included in an overall workflow. A workflow node can be either a Function, Sub-Flow, Service or Pattern</rdfs:comment>
+  <rdfs:label xml:lang="en">Workflow Node</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="appExecutionMode">
+  <rdfs:label xml:lang="en">Application has Execution Mode</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="callsDependency">
+  <rdfs:label xml:lang="en">Application calls Dependency</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="cloudAPIVersion">
+  <rdfs:label xml:lang="en">Cloud Service - Cloud API Version</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="cloudAuthentication">
+  <rdfs:label xml:lang="en">Cloud Service has Authentication</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="clusterNode">
+  <rdfs:label xml:lang="en">Cluster has Compute Node</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="dataDeletionTime">
+  <rdfs:label xml:lang="en">Privacy - Data Deletion Time</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="dataEncryptedInStorage">
+  <rdfs:label xml:lang="en">Confidentiality - Data Encrypted in Storage</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="dataEncryptedInTransit">
+  <rdfs:label xml:lang="en">Confidentiality - Data Encrypted in Transit</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="dataGlobalLocationAllowed">
+  <rdfs:label xml:lang="en">Privacy - Data - Global Location Allowed</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="dataMustBeAnonymized">
+  <rdfs:label xml:lang="en">Privacy - Data must be anonymized</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="deployedOnResource">
+  <rdfs:comment xml:lang="en">Target deployment of a Software Artefact.
+
+Note: Value can be a subclass of Resource rather than individual of the SubClass, if the Target deployment is not specific, or deployment is not done.</rdfs:comment>
+  <rdfs:label xml:lang="en">Software Artifact is Deployed On Resource</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="deterioratesQoS">
+  <rdfs:comment xml:lang="en">Need to check this further...</rdfs:comment>
+  <rdfs:label xml:lang="en">Pattern deteriorates QoS</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="enhancesQoS">
+  <rdfs:comment xml:lang="en">Need to check this further...</rdfs:comment>
+  <rdfs:label xml:lang="en">Pattern enhances QoS</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="exposesAPI">
+  <rdfs:label xml:lang="en">Service exposes API</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="finalCode">
+  <rdfs:label xml:lang="en">Function has Finalization Code</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="funcCode">
+  <rdfs:label xml:lang="en">Function has Code</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasApplicationRequirement">
+  <rdfs:comment xml:lang="en">An "Application" individual has to expose its requirements in order to be deployed on a Resource with matching "Resource Attributes".</rdfs:comment>
+  <rdfs:label xml:lang="en">Application has Requirement</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasArchitecture">
+  <rdfs:comment>This attributes indicates the architecture of the CPU used by a cluster node or the resource unit a cluster node is hosted on. It can also be assigned to the cluster itself to present uniformity across nodes.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasCallingDependency">
+  <rdfs:label xml:lang="en">Application has Calling Dependency</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasDependency">
+  <rdfs:label xml:lang="en">Application has Dependency</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasFunction">
+  <rdfs:comment xml:lang="en">Sub-property of 'Flow has Node'. Shows that a Function is included in a Flow.
+
+A Function is processed in a different way compared to other types of Workflow Nodes.
+Derived from Node-RED.</rdfs:comment>
+  <rdfs:label xml:lang="en">Flow has Function</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasInstance">
+  <rdfs:comment xml:lang="en">Any kind of individual can be marked as a Template for some other individual which is its Instance!
+
+Template and Instance is not a class to subclass relationship most of the time. Use this property to mark templates and instances.
+
+Check the class definitions for examples of Templates and Instances.</rdfs:comment>
+  <rdfs:label xml:lang="en">Template has Instance</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasJSONDescription">
+  <rdfs:label xml:lang="en">Application has JSON Description</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasNode">
+  <rdfs:comment xml:lang="en">Shows that a node is part of a Flow.
+
+This is a high-level property to be used for all components of a Flow.</rdfs:comment>
+  <rdfs:label xml:lang="en">Flow has Node</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasNodeInput">
+  <rdfs:label xml:lang="en">Node has App Interface Input</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasNodeOutput">
+  <rdfs:label xml:lang="en">Node has App Interface Output</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasOwner">
+  <rdfs:label xml:lang="en">Application has Owner</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasPlatformDependency">
+  <rdfs:label xml:lang="en">Application has Platform Dependency</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasQoSMetric">
+  <rdfs:label xml:lang="en">has QoS Metric</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasResourceAttribute">
+  <rdfs:comment xml:lang="en">A "Resource" exposes "ResourceAttributes" which can be matched with Application Requirements.</rdfs:comment>
+  <rdfs:label xml:lang="en">Resource has Attribute</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasRole">
+  <rdfs:comment>A cluster node can be one of "Master" or "Worker" indicating it's role in the cluster.</rdfs:comment>
+  <rdfs:label>ClusterNode has Role</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasRuntime">
+  <rdfs:label xml:lang="en">Application has Runtime</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasSLA">
+  <rdfs:label xml:lang="en">Cloud Provider has SLA</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasSoftwareArtifact">
+  <rdfs:label xml:lang="en">Application has Deployable Software Artifact</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="hasTemplate">
+  <rdfs:comment xml:lang="en">Any kind of individual can be marked as a Template for some other individual which is its Instance!
+
+Template and Instance is not a class to subclass relationship most of the time. Use this property to mark templates and instances.
+
+Check the class definitions for examples of Templates and Instances.</rdfs:comment>
+  <rdfs:label xml:lang="en">Instance has Template</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="includesFlow">
+  <rdfs:comment xml:lang="en">Application has a Flow as a component.
+
+Properties like this make the Application individuals that have them be compositions of multiple Application components.</rdfs:comment>
+  <rdfs:label xml:lang="en">Application includes Flow</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="includesService">
+  <rdfs:comment xml:lang="en">A Service is included in an Application as a component.
+
+Properties like this make the Application individuals that have them be compositions of multiple Application components.</rdfs:comment>
+  <rdfs:label xml:lang="en">Application includes Service</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="includesSubflow">
+  <rdfs:label xml:lang="en">Flow includes Subflow</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="initCode">
+  <rdfs:label xml:lang="en">Function has Initialization Code</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="isBlackBox">
+  <rdfs:comment xml:lang="en">Application individual is a Black Box, if true. That means that an Application is not composed of any of its subclasses, and is not an Instance (has no Template).
+
+Note: This SHOULD BE INFERRED by a rule that finds that an Application is not an Instance of a generally valid and non-Black-Box Template Application, and not a member of any of the Application subclasses.
+
+Notice: Black Box Applications should not be used as Templates. Certain subclasses, like Flow, Function, should not be black boxes.</rdfs:comment>
+  <rdfs:label xml:lang="en">Application is Black Box</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="isNodeInputOf">
+  <rdfs:label xml:lang="en">App Interface is Input of Node</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="isNodeOutputOf">
+  <rdfs:label xml:lang="en">App Interface is Output of Node</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="isTopLevelComposite">
+  <rdfs:comment xml:lang="en">An Application is a Top-Level package that is a Composition of several individuals that are members of its subclasses, if true.
+
+This can apply to members of subclasses like Flow, as long as they are the top-level Application package in their case.
+
+Note: This SHOULD BE INFERRED BY A RULE that finds the top-level composite Application.</rdfs:comment>
+  <rdfs:label xml:lang="en">Application is Top-Level &amp; Composite</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="label">
+  <rdfs:comment xml:lang="en">A string label for an individual that abides to the PHYSICS ontology. It is used as the main, clean, human-readable name.</rdfs:comment>
+  <rdfs:label xml:lang="en">has Label</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="manages">
+  <rdfs:label xml:lang="en">Manager manages</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="managesApplication">
+  <rdfs:comment xml:lang="en">This property expresses that a Management Entity manages a Resource.
+
+Management Entities include management systems, orchestrators, operations support platforms, etc. for Resources. The common characteristic of these management entities is their (softwarized) configurability via APIs.</rdfs:comment>
+  <rdfs:label xml:lang="en">manages Application</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="managesResource">
+  <rdfs:comment xml:lang="en">This property expresses that a Management Entity manages Application.
+
+Management Entities include management systems, orchestrators, operations support platforms, etc. for Applications. The common characteristic of these management entities is their (softwarized) configurability via APIs.</rdfs:comment>
+  <rdfs:label xml:lang="en">manages Resource</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="partOfCluster">
+  <rdfs:label xml:lang="en">Compute Node is part of Cluster</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="providesCloudService">
+  <rdfs:label>Cloud Provider provides Cloud Service</rdfs:label>
+  <rdfs:label>Provides Cloud Service</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="serverlessDeployedOn">
+  <rdfs:label xml:lang="en">Serverless Platform is deployed on</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="slaProvider">
+  <rdfs:label xml:lang="en">SLA is provided by Public Cloud</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="swArtifactExecutionMode">
+  <rdfs:label xml:lang="en">Software Artifact has Execution Mode</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="usesAuthentication">
+  <rdfs:label xml:lang="en">Application uses Authentication</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="usesConnectivity">
+  <rdfs:label xml:lang="en">Service uses Connectivity Protocol</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="usesSecurity">
+  <rdfs:label xml:lang="en">Application uses Security Params</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="value">
+  <rdfs:comment xml:lang="en">One generic value of any type that can characterize or quantify an individual that abides to the PHYSICS ontology.</rdfs:comment>
+  <rdfs:label xml:lang="en">has Value</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="withMaxValue">
+  <rdfs:label xml:lang="en">Attribute with Max Value</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="withMinValue">
+  <rdfs:label xml:lang="en">Attribute with Min Value</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="withNumValue">
+  <rdfs:label xml:lang="en">Attribute with Value (Numerical Data)</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="withPossibleValue">
+  <rdfs:label xml:lang="en">Attribute with Possible Value</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="withPreferedValue">
+  <rdfs:label xml:lang="en">Attribute with Prefered Value</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="withValue">
+  <rdfs:label xml:lang="en">Attribute with String Value (Nominal Data)</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="withVariance">
+  <rdfs:label xml:lang="en">Attribute with Variance</rdfs:label>
+</rdf:Description>
+
+<phys:Cluster rdf:about="cluster1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterUsesPlatform rdf:resource="kubernetes1"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode2"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode1"/>
+  <phys:ClusterHasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">202205-0503-0359-fa9ea94d-9472-4979-a42b-bc3de222d45e</phys:ClusterHasID>
+</phys:Cluster>
+
+<phys:Kubernetes rdf:about="kubernetes1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:PlatformHasDistribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K3s</phys:PlatformHasDistribution>
+</phys:Kubernetes>
+
+<phys:OS rdf:about="os1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubuntu 20.04.3 LTS</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram1"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu1"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="singleboardunit3"/>
+  <phys:OperatesWith rdf:resource="os1"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:OS rdf:about="os2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubuntu 20.04.3 LTS</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu2"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram2"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="singleboardunit3"/>
+  <phys:OperatesWith rdf:resource="os2"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:SingleBoardUnit rdf:about="singleboardunit1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatesWith rdf:resource="linux1"/>
+  <phys:hasRawComputationalUnit rdf:resource="ram3"/>
+  <phys:hasRawComputationalUnit rdf:resource="cpu3"/>
+</phys:SingleBoardUnit>
+
+<phys:Ram rdf:about="ram3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:withNumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:withNumValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:withNumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> 6</phys:withNumValue>
+</phys:CPU>
+
+<phys:Linux rdf:about="linux1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</phys:Linux>
+
+<phys:Cluster rdf:about="cluster2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterUsesPlatform rdf:resource="kubernetes2"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode2"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode1"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode4"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode3"/>
+  <phys:ClusterHasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">202205-0503-0401-420b9546-fff9-4ef4-a0cf-552937f84a41</phys:ClusterHasID>
+</phys:Cluster>
+
+<phys:Kubernetes rdf:about="kubernetes2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:PlatformHasDistribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K3s</phys:PlatformHasDistribution>
+</phys:Kubernetes>
+
+<phys:OS rdf:about="os3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubuntu 20.04.3 LTS</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram4"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu4"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="singleboardunit3"/>
+  <phys:OperatesWith rdf:resource="os3"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:OS rdf:about="os4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubuntu 20.04.3 LTS</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram5"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu5"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="singleboardunit3"/>
+  <phys:OperatesWith rdf:resource="os4"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:SingleBoardUnit rdf:about="singleboardunit2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatesWith rdf:resource="linux2"/>
+  <phys:hasRawComputationalUnit rdf:resource="ram6"/>
+  <phys:hasRawComputationalUnit rdf:resource="cpu6"/>
+</phys:SingleBoardUnit>
+
+<phys:Ram rdf:about="ram6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:withNumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:withNumValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:withNumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> 6</phys:withNumValue>
+</phys:CPU>
+
+<phys:Linux rdf:about="linux2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</phys:Linux>
+
+<phys:Cluster rdf:about="cluster3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterUsesPlatform rdf:resource="kubernetes3"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode5"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode2"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode1"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode3"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode6"/>
+  <phys:ConsistsOfNodes rdf:resource="clusternode4"/>
+  <phys:ClusterHasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">202205-0503-0425-37464b18-0f36-4ada-925e-400e43e672a8</phys:ClusterHasID>
+</phys:Cluster>
+
+<phys:Kubernetes rdf:about="kubernetes3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:PlatformHasDistribution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K3s</phys:PlatformHasDistribution>
+</phys:Kubernetes>
+
+<phys:OS rdf:about="os5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubuntu 20.04.3 LTS</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram7"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu7"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="singleboardunit3"/>
+  <phys:OperatesWith rdf:resource="os5"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:OS rdf:about="os6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatingSystemHasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amd64</phys:OperatingSystemHasArchitecture>
+  <phys:OperatingSystemHasImage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubuntu 20.04.3 LTS</phys:OperatingSystemHasImage>
+</phys:OS>
+
+<phys:ClusterNode rdf:about="clusternode6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="cpu8"/>
+  <phys:ClusterNodeHasComputationalUnit rdf:resource="ram8"/>
+  <phys:ClusterNodeIsHostedOn rdf:resource="singleboardunit3"/>
+  <phys:OperatesWith rdf:resource="os6"/>
+  <phys:hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</phys:hasRole>
+</phys:ClusterNode>
+
+<phys:Ram rdf:about="ram8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6374532Ki</phys:RawComputationalResourceCapacityValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:RawComputationalResourceAllocatableValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceAllocatableValue>
+  <phys:RawComputationalResourceCapacityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</phys:RawComputationalResourceCapacityValue>
+</phys:CPU>
+
+<phys:SingleBoardUnit rdf:about="singleboardunit3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:OperatesWith rdf:resource="linux3"/>
+  <phys:hasRawComputationalUnit rdf:resource="ram9"/>
+  <phys:hasRawComputationalUnit rdf:resource="cpu9"/>
+</phys:SingleBoardUnit>
+
+<phys:Ram rdf:about="ram9">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:withNumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</phys:withNumValue>
+</phys:Ram>
+
+<phys:CPU rdf:about="cpu9">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <phys:withNumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> 6</phys:withNumValue>
+</phys:CPU>
+
+<phys:Linux rdf:about="linux3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</phys:Linux>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="KNative"/>
+    <rdf:Description rdf:about="OpenFaas"/>
+    <rdf:Description rdf:about="OpenWhisk"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="Hybrid"/>
+    <rdf:Description rdf:about="Private"/>
+    <rdf:Description rdf:about="Public"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="CloudStack"/>
+    <rdf:Description rdf:about="Kubernetes"/>
+    <rdf:Description rdf:about="OpenStack"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="Android"/>
+    <rdf:Description rdf:about="IoS"/>
+    <rdf:Description rdf:about="Linux"/>
+    <rdf:Description rdf:about="WIndows"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>

@@ -1,0 +1,1976 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.physics-h2020.eu/physics/"
+     xml:base="http://www.physics-h2020.eu/physics/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:irao="http://ontology.ethereal.cz/irao/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:wfdesc="http://purl.org/wf4ever/wfdesc#">
+    <owl:Ontology rdf:about="http://www.physics-h2020.eu/physics/">
+        <owl:versionIRI rdf:resource="http://www.physics-h2020.eu/physics/1.0.0"/>
+        <owl:imports rdf:resource="https://raw.github.com/wf4ever/ro/0.1.1/wfdesc.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ClusterIsDeployedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/ClusterIsDeployedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label>Cluster Is Deployed On</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ClusterNodeHasComputationalUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/ClusterNodeHasComputationalUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/ClusterNode"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/RawComputationalResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ClusterNodeIsHostedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/ClusterNodeIsHostedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/ClusterNode"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/ResourceUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ClusterUsesPlatform -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/ClusterUsesPlatform">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label>Cluster Uses Platform</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ConsistsOfNodes -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/ConsistsOfNodes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label>Cluster Consists of Nodes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/OperatesWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/OperatesWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/ClusterNode"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/OS"/>
+        <rdfs:label>Cluster Node Operates With Operating System</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ResourceUnitHasRawComputationalResource -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/ResourceUnitHasRawComputationalResource">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/appExecutionMode -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/appExecutionMode">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/ExecutionMode"/>
+        <rdfs:label xml:lang="en">Application has Execution Mode</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/callsDependency -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/callsDependency">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/hasDependency"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/SoftwareLibrary"/>
+        <rdfs:label xml:lang="en">Application calls Dependency</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/cloudAuthentication -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/cloudAuthentication">
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Authentication"/>
+        <rdfs:label xml:lang="en">Cloud Service has Authentication</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/clusterNode -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/clusterNode">
+        <owl:inverseOf rdf:resource="http://www.physics-h2020.eu/physics/partOfCluster"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:label xml:lang="en">Cluster has Compute Node</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/deployedOnResource -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/deployedOnResource">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/DeployableArtifact"/>
+        <rdfs:comment xml:lang="en">Target deployment of a Software Artefact.
+
+Note: Value can be a subclass of Resource rather than individual of the SubClass, if the Target deployment is not specific, or deployment is not done.</rdfs:comment>
+        <rdfs:label xml:lang="en">Software Artifact is Deployed On Resource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/deterioratesQoS -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/deterioratesQoS">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Pattern"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/QoS"/>
+        <rdfs:comment xml:lang="en">Need to check this further...</rdfs:comment>
+        <rdfs:label xml:lang="en">Pattern deteriorates QoS</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/enhancesQoS -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/enhancesQoS">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Pattern"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/QoS"/>
+        <rdfs:comment xml:lang="en">Need to check this further...</rdfs:comment>
+        <rdfs:label xml:lang="en">Pattern enhances QoS</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/exposesAPI -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/exposesAPI">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Service"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/API"/>
+        <rdfs:label xml:lang="en">Service exposes API</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasApplicationRequirement -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasApplicationRequirement">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/AppRequirement"/>
+        <rdfs:comment xml:lang="en">An &quot;Application&quot; individual has to expose its requirements in order to be deployed on a Resource with matching &quot;Resource Attributes&quot;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Application has Requirement</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasCallingDependency -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasCallingDependency">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/hasDependency"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/SoftwareFramework"/>
+        <rdfs:label xml:lang="en">Application has Calling Dependency</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasDependency -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasDependency">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">Application has Dependency</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasFunction -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasFunction">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/hasNode"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Flow"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Function"/>
+        <rdfs:comment xml:lang="en">Sub-property of &apos;Flow has Node&apos;. Shows that a Function is included in a Flow.
+
+A Function is processed in a different way compared to other types of Workflow Nodes.
+Derived from Node-RED.</rdfs:comment>
+        <rdfs:label xml:lang="en">Flow has Function</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasImage -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasImage">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/hasTemplate"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/StandaloneContainer"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/SoftwareImage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasInstance -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasInstance">
+        <owl:inverseOf rdf:resource="http://www.physics-h2020.eu/physics/hasTemplate"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Template"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Instance"/>
+        <rdfs:comment xml:lang="en">Any kind of individual can be marked as a Template for some other individual which is its Instance!
+
+Template and Instance is not a class to subclass relationship most of the time. Use this property to mark templates and instances.
+
+Check the class definitions for examples of Templates and Instances.</rdfs:comment>
+        <rdfs:label xml:lang="en">Template has Instance</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasNode -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasNode">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Flow"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/WorkflowNode"/>
+        <rdfs:comment xml:lang="en">Shows that a node is part of a Flow.
+
+This is a high-level property to be used for all components of a Flow.</rdfs:comment>
+        <rdfs:label xml:lang="en">Flow has Node</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasNodeInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasNodeInput">
+        <owl:inverseOf rdf:resource="http://www.physics-h2020.eu/physics/isNodeInputOf"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/WorkflowNode"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/ApplicationInterface"/>
+        <rdfs:label xml:lang="en">Node has App Interface Input</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasNodeOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasNodeOutput">
+        <owl:inverseOf rdf:resource="http://www.physics-h2020.eu/physics/isNodeOutputOf"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/WorkflowNode"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/ApplicationInterface"/>
+        <rdfs:label xml:lang="en">Node has App Interface Output</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasOwner -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasOwner">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/User"/>
+        <rdfs:label xml:lang="en">Application has Owner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasPlatformDependency -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasPlatformDependency">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/hasDependency"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:label xml:lang="en">Application has Platform Dependency</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasQoSMetric -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasQoSMetric">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/QoS"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/QoSMetric"/>
+        <rdfs:label xml:lang="en">has QoS Metric</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasRawComputationalUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasRawComputationalUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/ClusterNode"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/ResourceUnit"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/RawComputationalResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasResourceAttribute -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasResourceAttribute">
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/ResourceAttribute"/>
+        <rdfs:comment xml:lang="en">A &quot;Resource&quot; exposes &quot;ResourceAttributes&quot; which can be matched with Application Requirements.</rdfs:comment>
+        <rdfs:label xml:lang="en">Resource has Attribute</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasRuntime -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasRuntime">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/hasDependency"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Runtime"/>
+        <rdfs:label xml:lang="en">Application has Runtime</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasSLA -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasSLA">
+        <owl:inverseOf rdf:resource="http://www.physics-h2020.eu/physics/slaProvider"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/SLA"/>
+        <rdfs:label xml:lang="en">Cloud Provider has SLA</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasSoftwareArtifact -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasSoftwareArtifact">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/hasInstance"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/DeployableArtifact"/>
+        <rdfs:label xml:lang="en">Application has Deployable Software Artifact</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasTemplate -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/hasTemplate">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Instance"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Template"/>
+        <rdfs:comment xml:lang="en">Any kind of individual can be marked as a Template for some other individual which is its Instance!
+
+Template and Instance is not a class to subclass relationship most of the time. Use this property to mark templates and instances.
+
+Check the class definitions for examples of Templates and Instances.</rdfs:comment>
+        <rdfs:label xml:lang="en">Instance has Template</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/includesFlow -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/includesFlow">
+        <rdfs:comment xml:lang="en">Application has a Flow as a component.
+
+Properties like this make the Application individuals that have them be compositions of multiple Application components.</rdfs:comment>
+        <rdfs:label xml:lang="en">Application includes Flow</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/includesService -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/includesService">
+        <rdfs:comment xml:lang="en">A Service is included in an Application as a component.
+
+Properties like this make the Application individuals that have them be compositions of multiple Application components.</rdfs:comment>
+        <rdfs:label xml:lang="en">Application includes Service</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/includesSubflow -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/includesSubflow">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/wf4ever/wfdesc#hasSubWorkflow"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/includesFlow"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Flow"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/SubFlow"/>
+        <rdfs:label xml:lang="en">Flow includes Subflow</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/isNodeInputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/isNodeInputOf">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/ApplicationInterface"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/WorkflowNode"/>
+        <rdfs:label xml:lang="en">App Interface is Input of Node</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/isNodeOutputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/isNodeOutputOf">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/ApplicationInterface"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/WorkflowNode"/>
+        <rdfs:label xml:lang="en">App Interface is Output of Node</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/manages -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/manages">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Management"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">Manager manages</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/managesApplication -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/managesApplication">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/manages"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/ApplicationManagement"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:comment xml:lang="en">This property expresses that a Management Entity manages a Resource.
+
+Management Entities include management systems, orchestrators, operations support platforms, etc. for Resources. The common characteristic of these management entities is their (softwarized) configurability via APIs.</rdfs:comment>
+        <rdfs:label xml:lang="en">manages Application</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/managesResource -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/managesResource">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/manages"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/ResourceManagement"/>
+        <rdfs:comment xml:lang="en">This property expresses that a Management Entity manages Application.
+
+Management Entities include management systems, orchestrators, operations support platforms, etc. for Applications. The common characteristic of these management entities is their (softwarized) configurability via APIs.</rdfs:comment>
+        <rdfs:label xml:lang="en">manages Resource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/partOfCluster -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/partOfCluster">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:label xml:lang="en">Compute Node is part of Cluster</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/providesCloudService -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/providesCloudService">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/CloudProvider"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/CloudService"/>
+        <rdfs:label>Cloud Provider provides Cloud Service</rdfs:label>
+        <rdfs:label>Provides Cloud Service</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/serverlessDeployedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/serverlessDeployedOn">
+        <rdfs:label xml:lang="en">Serverless Platform is deployed on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/slaProvider -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/slaProvider">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/SLA"/>
+        <rdfs:label xml:lang="en">SLA is provided by Public Cloud</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/swArtifactExecutionMode -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/swArtifactExecutionMode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/DeployableArtifact"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/ExecutionMode"/>
+        <rdfs:label xml:lang="en">Software Artifact has Execution Mode</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/usesAuthentication -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/usesAuthentication">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Authentication"/>
+        <rdfs:label xml:lang="en">Application uses Authentication</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/usesConnectivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/usesConnectivity">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Service"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/ConnectivityProtocol"/>
+        <rdfs:label xml:lang="en">Service uses Connectivity Protocol</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/usesSecurity -->
+
+    <owl:ObjectProperty rdf:about="http://www.physics-h2020.eu/physics/usesSecurity">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.physics-h2020.eu/physics/Security"/>
+        <rdfs:label xml:lang="en">Application uses Security Params</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ClusterHasID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/ClusterHasID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/OperatingSystemHasArchitecture -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/OperatingSystemHasArchitecture">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/OS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/OperatingSystemHasImage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/OperatingSystemHasImage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/OS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/OperatingSystemHasVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/OperatingSystemHasVersion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/OS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/PlatformHasDistribution -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/PlatformHasDistribution">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Platform"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/PlatformHasVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/PlatformHasVersion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Platform"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/RawComputationalResourceAllocatableValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/RawComputationalResourceAllocatableValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/RawComputationalResourceCapacityValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/RawComputationalResourceCapacityValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/cloudAPIVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/cloudAPIVersion">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Cloud Service - Cloud API Version</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/cloudServiceInstanceID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/cloudServiceInstanceID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Compute"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/cloudServiceInstanceType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/cloudServiceInstanceType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Compute"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/cloudServiceName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/cloudServiceName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/CloudService"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/cloudServicePrivateIP -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/cloudServicePrivateIP">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Compute"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Database"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/clusterLocality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/clusterLocality">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/dataDeletionTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/dataDeletionTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Privacy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:label xml:lang="en">Privacy - Data Deletion Time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/dataEncryptedInStorage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/dataEncryptedInStorage">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Confidentiality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">Confidentiality - Data Encrypted in Storage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/dataEncryptedInTransit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/dataEncryptedInTransit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Confidentiality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">Confidentiality - Data Encrypted in Transit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/dataGlobalLocationAllowed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/dataGlobalLocationAllowed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Privacy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">Privacy - Data - Global Location Allowed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/dataMustBeAnonymized -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/dataMustBeAnonymized">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Privacy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">Privacy - Data must be anonymized</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/finalCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/finalCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Function"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Function has Finalization Code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/funcCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/funcCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Function"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Function has Code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasArchitecture -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/hasArchitecture">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/ClusterNode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This attributes indicates the architecture of the CPU used by a cluster node or the resource unit a cluster node is hosted on. It can also be assigned to the cluster itself to present uniformity across nodes.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasEnergyScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/hasEnergyScore">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasJSONDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/hasJSONDescription">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON"/>
+        <rdfs:label xml:lang="en">Application has JSON Description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasPerformanceScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/hasPerformanceScore">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasResilienceScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/hasResilienceScore">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/hasRole -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/hasRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/ClusterNode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A cluster node can be one of &quot;Master&quot; or &quot;Worker&quot; indicating it&apos;s role in the cluster.</rdfs:comment>
+        <rdfs:label>ClusterNode has Role</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/initCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/initCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Function"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Function has Initialization Code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/isBlackBox -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/isBlackBox">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Application individual is a Black Box, if true. That means that an Application is not composed of any of its subclasses, and is not an Instance (has no Template).
+
+Note: This SHOULD BE INFERRED by a rule that finds that an Application is not an Instance of a generally valid and non-Black-Box Template Application, and not a member of any of the Application subclasses.
+
+Notice: Black Box Applications should not be used as Templates. Certain subclasses, like Flow, Function, should not be black boxes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Application is Black Box</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/isLocated -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/isLocated">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Cluster"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Compute"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Database"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Storage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/isTopLevelComposite -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/isTopLevelComposite">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">An Application is a Top-Level package that is a Composition of several individuals that are members of its subclasses, if true.
+
+This can apply to members of subclasses like Flow, as long as they are the top-level Application package in their case.
+
+Note: This SHOULD BE INFERRED BY A RULE that finds the top-level composite Application.</rdfs:comment>
+        <rdfs:label xml:lang="en">Application is Top-Level &amp; Composite</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/label -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/label">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A string label for an individual that abides to the PHYSICS ontology. It is used as the main, clean, human-readable name.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/value">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">One generic value of any type that can characterize or quantify an individual that abides to the PHYSICS ontology.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/withMaxValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/withMaxValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/DeploymentAttribute"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">Attribute with Max Value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/withMinValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/withMinValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/DeploymentAttribute"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">Attribute with Min Value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/withNumValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/withNumValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/value"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/DeploymentAttribute"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/RawComputationalResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">Attribute with Value (Numerical Data)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/withPossibleValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/withPossibleValue">
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/DeploymentAttribute"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Attribute with Possible Value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/withPreferedValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/withPreferedValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/DeploymentAttribute"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Attribute with Prefered Value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/withValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/withValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.physics-h2020.eu/physics/value"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/DeploymentAttribute"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/RawComputationalResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Attribute with String Value (Nominal Data)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/withVariance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.physics-h2020.eu/physics/withVariance">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.physics-h2020.eu/physics/DeploymentAttribute"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">Attribute with Variance</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.ethereal.cz/irao/Benchmark -->
+
+    <owl:Class rdf:about="http://ontology.ethereal.cz/irao/Benchmark">
+        <rdfs:comment xml:lang="en">A benchmark is a type of comparison and measuring with metrics, producing datasets and algorithms for comprehensive and systematic evaluation of existing and future systems</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://ontology.ethereal.cz/irao"/>
+        <rdfs:label xml:lang="en">Benchmark</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/wf4ever/wfdesc#Process -->
+
+    <rdf:Description rdf:about="http://purl.org/wf4ever/wfdesc#Process">
+        <rdfs:label xml:lang="en">wfdesc: Process</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/wf4ever/wfdesc#WorkflowInstance -->
+
+    <rdf:Description rdf:about="http://purl.org/wf4ever/wfdesc#WorkflowInstance">
+        <rdfs:label xml:lang="en">wfdesc: Workflow Instance</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/API -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/API">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/ApplicationInterface"/>
+        <rdfs:comment xml:lang="en">An API exposed by a Service and consumed by a Service or Function or Flow.</rdfs:comment>
+        <rdfs:label xml:lang="en">Application Programming Interface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Android -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Android">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/OS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/AppRequirement -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/AppRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/DeploymentAttribute"/>
+        <rdfs:comment xml:lang="en">A requirement that an Application individual has in order to be deployed.
+
+This requirement can be only one of the following: &quot;Raw Computational Resource&quot;, &quot;Locality&quot; or &quot;QoS&quot;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Application Requirement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Application -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Application">
+        <rdfs:subClassOf rdf:resource="http://purl.org/wf4ever/wfdesc#Process"/>
+        <rdfs:comment xml:lang="en">The PHYSICS Application class encompasses any PIECE OF LOGIC that is deployable to the continuum, regardless of its size and characteristics.
+
+An Application individual has to be a member/instance of either of the subclasses of Application class. Otherwise an Application is a top-level package that is a Composition of several individuals that are members of its subclasses.
+
+The only way for an application to not be a member of the Application subclasses, and not be composed of other components, is for an App that is considered a black box. Direct usage of blackboxes should be avoided. Best use applications that are External Services, and avoid using or referencing components that are Blackboxes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ApplicationInterface -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/ApplicationInterface">
+        <rdfs:comment xml:lang="en">The interface that an application, or part of application, exposes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Application Interface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ApplicationManagement -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/ApplicationManagement">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Management"/>
+        <rdfs:comment xml:lang="en">A management entity for Applications or Application Compopents.
+
+Examples include Orchestrators, Choreography platforms, CI/CD, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Application Management Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/AuthToken -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/AuthToken">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Authentication"/>
+        <rdfs:comment xml:lang="en">A kind of Authentication scheme that uses a Token for identifying and authenticating a user.</rdfs:comment>
+        <rdfs:label xml:lang="en">Authentication Token</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Authentication -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Authentication">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/ParameterGroup"/>
+        <rdfs:comment xml:lang="en">An authentication Scheme</rdfs:comment>
+        <rdfs:label xml:lang="en">Authentication</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/CPU -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/CPU">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/RawComputationalResource"/>
+        <owl:disjointWith rdf:resource="http://www.physics-h2020.eu/physics/Ram"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/CloudPlatform -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/CloudPlatform">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/CloudProvider -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/CloudProvider">
+        <rdfs:comment xml:lang="en">Public Cloud Provider
+
+To be connection point with other ontology?</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Provider</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/CloudService -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/CloudService">
+        <rdfs:comment>Any type of service that is provided in a public cloud. Different vendors provide different services of various types such as storage, compute or case specific.</rdfs:comment>
+        <rdfs:label>Cloud Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/CloudStack -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/CloudStack">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Cluster -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Cluster">
+        <rdfs:comment xml:lang="en">Computer Cluster</rdfs:comment>
+        <rdfs:label xml:lang="en">Cluster</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ClusterNode -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/ClusterNode"/>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Compute -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Compute">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Computer -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Computer">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/PhysicalResourceUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Confidentiality -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Confidentiality">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Security"/>
+        <rdfs:comment xml:lang="en">Grouping of Confidentiality-related properties. The given confidentiality parameters group can either be expected or provided by an entity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Confidentiality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ConnectivityProtocol -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/ConnectivityProtocol">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/ApplicationInterface"/>
+        <rdfs:comment xml:lang="en">A connectivity protocol.
+
+E.g., for databases the xDBC</rdfs:comment>
+        <rdfs:label xml:lang="en">Connectivity Protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Credentials -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Credentials">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Authentication"/>
+        <rdfs:comment xml:lang="en">User Credentials as Authentication scheme</rdfs:comment>
+        <rdfs:label xml:lang="en">Credentials</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Database -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Database">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Debian -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Debian">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Linux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/DeployableArtifact -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/DeployableArtifact">
+        <rdfs:comment xml:lang="en">A Software Artefact that can be deployed on some kind of resource.</rdfs:comment>
+        <rdfs:label xml:lang="en">Deployable Software Artifact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/DeploymentAttribute -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/DeploymentAttribute">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/Locality"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/QoS"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/RawComputationalResource"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment xml:lang="en">An attribute or parameter which explains or measures some facet of either deploying an application, or resources available for application deployment.
+
+It is meant to be a superclass of &quot;Resource Attribute&quot; and &quot;Application Requirement&quot;. An individual has either a specific value, a range of values, or some possible values, or maybe with some preferred value.
+
+Properties of the classes that constitute the disjoint union of this class may be sub-properties of the properties of this class in many cases.</rdfs:comment>
+        <rdfs:label xml:lang="en">Deployment Attribute</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Deployment_Model -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Deployment_Model">
+        <rdfs:comment>This class refers to the cloud availability defining wether the deployment is performed on private, public or hybrid cloud.</rdfs:comment>
+        <rdfs:label>Deployment Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ExecutionMode -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/ExecutionMode">
+        <rdfs:comment xml:lang="en">Mode of execution for an Application (or Subclass). 
+
+Note: Subcomponents of an Application individual may define different modes of execution.
+
+Note: It is acceptable to be more than one modes of execution for an Application. There is one Software Artifact for one Execution mode.</rdfs:comment>
+        <rdfs:label xml:lang="en">Execution Mode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ExternalService -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/ExternalService">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Service"/>
+        <owl:disjointWith rdf:resource="http://www.physics-h2020.eu/physics/StandaloneContainer"/>
+        <rdfs:comment xml:lang="en">A Service that is included in some workflow, or for a Service that is a mixin or composition, that is not controlled by the same environment.</rdfs:comment>
+        <rdfs:label xml:lang="en">External Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Flow -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Flow">
+        <rdfs:subClassOf rdf:resource="http://purl.org/wf4ever/wfdesc#WorkflowInstance"/>
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:comment xml:lang="en">Node-Red or Application composer Flow</rdfs:comment>
+        <rdfs:label xml:lang="en">Flow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Function -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Function">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+        <rdfs:comment xml:lang="en">Function in FaaS terms.</rdfs:comment>
+        <rdfs:label xml:lang="en">Function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Hybrid -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Hybrid">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Deployment_Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Hypervisor -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Hypervisor"/>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Instance -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Instance">
+        <rdfs:comment xml:lang="en">An Instance created based on some Template.
+
+Encompasses common cases of instantiation. In programming a class has some objects as instances. In virtualization, a VM image has a running VM as an instance, an Image has a running Cointainer as an instance, and so on.
+
+This class is a high-level abstraction of all kinds of Instances.</rdfs:comment>
+        <rdfs:label xml:lang="en">Instance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/IoS -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/IoS">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/OS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/IoT -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/IoT">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/KNative -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/KNative">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/ServerlessPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Kubernetes -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Kubernetes">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/LibraryNode -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/LibraryNode">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/SoftwareLibrary"/>
+        <rdfs:comment xml:lang="en">A software library, or part of a library, packaged as a complete Node-RED or visual application composition tool node, that can be embedded as a workflow node.</rdfs:comment>
+        <rdfs:label xml:lang="en">Software Library Node</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Linux -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Linux">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/OS"/>
+        <rdfs:label xml:lang="en">Linux Distribution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Locality -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Locality">
+        <rdfs:comment xml:lang="en">Resource Locality, e.g. the region of a Data Center or the location/area of an Edge or Service Island. When it comes to Applications, it means the locality the deployable item requires, in terms of region, or named network.</rdfs:comment>
+        <rdfs:label xml:lang="en">Locality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/MacOS -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/MacOS">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/OS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Management -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Management">
+        <rdfs:comment xml:lang="en">This class encompasses management entities, commonly accessible trhough APIs, that manage Resources or Applications (and/or their components).
+
+Management Entities include management systems, orchestrators, operations support platforms, etc. for Applications or Resources. The common characteristic of these management entities is their (softwarized) configurability via APIs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Management Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/MessageWire -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/MessageWire">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/ApplicationInterface"/>
+        <rdfs:comment xml:lang="en">A wire between two Functions or other Node types. A message wire is an output of a function or node, and then functions or nodes may have this as input.</rdfs:comment>
+        <rdfs:label xml:lang="en">Message Wire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Messaging -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Messaging">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Miscellaneous -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Miscellaneous">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Networking -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Networking">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/OS -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/OS">
+        <rdfs:label xml:lang="en">Operating System</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/OpenFaas -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/OpenFaas">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/ServerlessPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/OpenShift -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/OpenShift">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/OpenStack -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/OpenStack">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/OpenWhisk -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/OpenWhisk">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/ServerlessPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ParameterGroup -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/ParameterGroup">
+        <rdfs:comment xml:lang="en">A group of parameters, that pertains to a single entity and a specific field. The field that the parameters pertain to, such as Configuration, Authentication, Security, etc. is denoted by the corresponding subclass of this class. The parameters have only one specific value, and each parameter is a Data Property attached to the subclass.</rdfs:comment>
+        <rdfs:label xml:lang="en">Parameter Group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Pattern -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Pattern">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/SubFlow"/>
+        <rdfs:comment xml:lang="en">Pattern as defined in the context of the PHYSICS project. It is a skeleton implementation of a design pattern. It can be selected from a pallete in the visual developement environment, included in a Flow, and configured to be appropriate for the flow.</rdfs:comment>
+        <rdfs:label xml:lang="en">Pattern</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/PerformanceBenchmark -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/PerformanceBenchmark">
+        <rdfs:subClassOf rdf:resource="http://ontology.ethereal.cz/irao/Benchmark"/>
+        <rdfs:comment xml:lang="en">A Performance Benchmark is done so as to be able to predict, assess and compare the Performance of Applications deployed on Resources.</rdfs:comment>
+        <rdfs:label xml:lang="en">Performance Benchmark</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/PhysicalResourceUnit -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/PhysicalResourceUnit">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/ResourceUnit"/>
+        <owl:disjointWith rdf:resource="http://www.physics-h2020.eu/physics/Virtual_Resource_Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Platform -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Platform"/>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Privacy -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Privacy">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Security"/>
+        <rdfs:comment xml:lang="en">Grouping all properties of Privacy domain for an entity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Privacy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Private -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Private">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Deployment_Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Public -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Public">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Deployment_Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/QoS -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/QoS">
+        <rdfs:comment xml:lang="en">Quality of Service parameter that a Resource provides, or an Application requires.</rdfs:comment>
+        <rdfs:label xml:lang="en">QoS</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/QoSMetric -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/QoSMetric">
+        <rdfs:comment xml:lang="en">A QoS Metric gives meaning to the values of a QoS (attribute or requirement).
+
+Examples include &quot;requests per second&quot;, &quot;frames per second&quot;, &quot;bits per second&quot;, &quot;duration in seconds&quot; etc.
+
+Note that individuals of this class may also be members of other classes, depending on the domain.</rdfs:comment>
+        <rdfs:label xml:lang="en">QoS Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Ram -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Ram">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/RawComputationalResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/RawComputationalResource -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/RawComputationalResource">
+        <rdfs:comment xml:lang="en">Computational Resource, e.g. a processing unit like CPU, GPU, TPU or temporary storage i.e. RAM, or Persistent Storage like HDD or SSD, or a MicroController like an Arduino, or a specialized card, or FPGA, or ASIC.</rdfs:comment>
+        <rdfs:label xml:lang="en">Raw Computational Resource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ResourceAttribute -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/ResourceAttribute">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/DeploymentAttribute"/>
+        <rdfs:comment xml:lang="en">An attribute that expresses the Resource offerring.
+
+This can be one of the following: &quot;Raw Application Resource&quot;, &quot;Locality&quot;, &quot;QoS&quot;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Resource Attribute</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ResourceManagement -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/ResourceManagement">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Management"/>
+        <rdfs:comment xml:lang="en">This class encompasses management entities for Resource types. Most commonly access to these managment entities is through some API.
+
+Such management entities include Cloud platforms (through Cloud API), Hypervisors (through native API), MaaS (through its MaaS API), Network Controllers and Management Systems (through Northbound APIs) etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Resource Management Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ResourceUnit -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/ResourceUnit"/>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Runtime -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Runtime">
+        <rdfs:label xml:lang="en">A software runtime environment.
+
+Examples: Node.js, Python, JVM, GraalVM, ART, etc.</rdfs:label>
+        <rdfs:label xml:lang="en">Runtime</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/SLA -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/SLA">
+        <rdfs:label xml:lang="en">Service Level Aggreement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Security -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Security">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/ParameterGroup"/>
+        <rdfs:comment xml:lang="en">A grouping of Security-related properties, expected or provided.</rdfs:comment>
+        <rdfs:label xml:lang="en">Security</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ServerlessPlatform -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/ServerlessPlatform">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Service -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Service">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Application"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/SingleBoardUnit -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/SingleBoardUnit">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/PhysicalResourceUnit"/>
+        <rdfs:comment>This class refers to single board units acting usually as edge devices in the resource cluster concept.</rdfs:comment>
+        <rdfs:label>Single Board Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/SoftwareFramework -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/SoftwareFramework">
+        <rdfs:comment xml:lang="en">A Software Framework.
+
+This class encompasses Software Frameworks that are used in application development.
+
+Important: An individual of this class signifies that this framework CALLS a specific piece of code, i.e. an Application or part of an Application, in the terms of the PHYSICS ontology.</rdfs:comment>
+        <rdfs:label xml:lang="en">Software Framework</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/SoftwareImage -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/SoftwareImage">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/DeployableArtifact"/>
+        <rdfs:comment xml:lang="en">The Software Image can be either a reference to an image from a repository (preferable), or reference to a Dockerfile, or equivalent.</rdfs:comment>
+        <rdfs:label xml:lang="en">Software Image</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/SoftwareLibrary -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/SoftwareLibrary">
+        <rdfs:comment xml:lang="en">A software library.
+
+This class encompasses libraries, or parts of libraries, that are callable from a developer&apos;s code.</rdfs:comment>
+        <rdfs:label xml:lang="en">Software Library</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/StandaloneContainer -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/StandaloneContainer">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Service"/>
+        <rdfs:comment xml:lang="en">A container that is managed in the same environment as the platform, and acts as a Service.</rdfs:comment>
+        <rdfs:label xml:lang="en">Standalone Container</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Storage -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Storage">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/SubFlow -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/SubFlow">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Flow"/>
+        <rdfs:comment xml:lang="en">Node-Red or Application composer sub-flow. A flow, but reusable, as it can be included in other flows, and with set inputs and outputs.
+
+The “Sub-Flow” class signifies the packaging of flows as reusable sub-flows in other flows and the mandatory message wire inputs and/or outputs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sub-Flow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Template -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Template">
+        <rdfs:comment xml:lang="en">A Template is the basis for the creation of Instances.
+
+Encompasses common cases of templates used for instantiation. In programming a class is a Template which has some objects as instances. In virtualization, a VM image is a Template which has a running VM as an instance, an Image is a Template that has a running Container as an Instance, and so on.
+
+This class is a high-level abstraction of all kinds of Templates for Instances.</rdfs:comment>
+        <rdfs:label xml:lang="en">Template</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/User -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/User">
+        <rdfs:comment xml:lang="en">A User that uses a platform that abides to the PHYSICS ontology.</rdfs:comment>
+        <rdfs:label xml:lang="en">Platform User</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/VirtualBox -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/VirtualBox">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/Hypervisor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Virtual_Resource_Unit -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Virtual_Resource_Unit">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/ResourceUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/WIndows -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/WIndows">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/OS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/WorkflowNode -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/WorkflowNode">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/Function"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/LibraryNode"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/Service"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/SubFlow"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment xml:lang="en">A node included in an overall workflow. A workflow node can be either a Function, Sub-Flow, Service or Pattern</rdfs:comment>
+        <rdfs:label xml:lang="en">Workflow Node</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/AI_&amp;_Machine_Learning -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/AI_&amp;_Machine_Learning">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/Big_Data_&amp;_Analytics -->
+
+    <owl:Class rdf:about="http://www.physics-h2020.eu/physics/Big_Data_&amp;_Analytics">
+        <rdfs:subClassOf rdf:resource="http://www.physics-h2020.eu/physics/CloudService"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/NodeREDAction -->
+
+    <owl:NamedIndividual rdf:about="http://www.physics-h2020.eu/physics/NodeREDAction">
+        <rdf:type rdf:resource="http://www.physics-h2020.eu/physics/ExecutionMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/OpenWhiskSequence -->
+
+    <owl:NamedIndividual rdf:about="http://www.physics-h2020.eu/physics/OpenWhiskSequence">
+        <rdf:type rdf:resource="http://www.physics-h2020.eu/physics/ExecutionMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.physics-h2020.eu/physics/ServiceExecution -->
+
+    <owl:NamedIndividual rdf:about="http://www.physics-h2020.eu/physics/ServiceExecution">
+        <rdf:type rdf:resource="http://www.physics-h2020.eu/physics/ExecutionMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://purl.org/wf4ever/wfdesc#Workflow">
+        <rdfs:label xml:lang="en">wfdesc: Workflow</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/Android"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/IoS"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/Linux"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/WIndows"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/CloudStack"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/Kubernetes"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/OpenStack"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/Hybrid"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/Private"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/Public"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/KNative"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/OpenFaas"/>
+            <rdf:Description rdf:about="http://www.physics-h2020.eu/physics/OpenWhisk"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

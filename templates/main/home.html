@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+/* Header/Logo Title */
+.header {
+  padding: 0px;
+  text-align: center;
+  background: #999999;
+  color: white;
+  font-size: 20px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+  display: flex;
+  align-items: left;
+  justify-content: center
+}
+
+img {
+  max-width: 100%
+}
+
+.image {
+  flex-basis: 40%
+}
+
+.text {
+  font-size: 20px;
+  padding-left: 20px;
+}
+.button {
+  background-color: #3F3095; /* Green */
+  border: none;
+  color: orange;
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 150px
+}
+</style>
+
+<body>
+
+<div class="header">
+    <img src="{{ url_for('static',filename='PHYSICS-logo.svg') }}" alt="physics logo"   width="20%">
+    <h2>Service Semantics</h2>
+</div>
+
+
+    <div class="container">
+      <div class="image">
+        <img src="{{ url_for('static',filename='physics_onto_complete.png') }}" width="70%">
+      </div>
+      <div class="text">
+        <p>In computer science and information science,
+            an ontology encompasses a representation, formal naming,
+            and definition of the categories, properties, and relations between the concepts, data,
+            and entities that substantiate one, many, or all domains of discourse.
+            More simply, an ontology is a way of showing the properties of a subject area and how they are related,
+            by defining a set of concepts and categories that represent the subject..</p>
+      </div>
+    </div>
+
+<h2> Get Started </h2>
+<a class="button" href="http://127.0.0.1:5000/ontology-documentation">Ontology Documentation</a>
+<p style="display:inline-block"><em>A complete interactive documentation of the PHYSICS ontology</em></p>
+<br>
+<a class="button" href="http://127.0.0.1:5000/register-resource">Register Resource</a>
+<p style="display:inline-block"><em>Register a Resource via Interface</em></p>
+<br>
+</body>
+</html>
