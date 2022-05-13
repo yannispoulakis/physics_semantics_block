@@ -1,0 +1,767 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.physics-h2020.eu/physics/resources_ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.physics-h2020.eu/physics/resources_ontology">
+    <Prefix name="" IRI="http://www.physics-h2020.eu/physics/resources_ontology"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Benchmark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CPU"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CloudPlatform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CloudProvider"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CloudService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cluster"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClusterNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Compute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Computer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Database"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GPU"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hypervisor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IoT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Messaging"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Miscellaneous"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Networking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OperatingSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalResourceUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ram"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RawComputationalResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResourceUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Runtime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServerlessPlatform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServiceLevelAgreement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServiceLevelAgreementTerm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SingleBoardUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Storage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TPU"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VirtualResourceUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AI&amp;MachineLearning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BigData&amp;Analytics"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfNodes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBenchmark"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOperatingSystem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRawComputationalResource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSLA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSLATerm"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isHostedOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOfCluster"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#operatesWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#providesCloudService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#runsOnResourceUnit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesHypervisor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesPlatform"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasArchitecture"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDatatype"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDefinition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDistribution"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasImage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasInstanceID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasInstanceType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLocality"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPenalty"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPrivateIP"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRebate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRole"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isLocated"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#withAllocatableValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#withCapacityValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#withNumValue"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#CPU"/>
+        <Class IRI="#RawComputationalResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CloudPlatform"/>
+        <Class IRI="#Platform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Compute"/>
+        <Class IRI="#CloudService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Computer"/>
+        <Class IRI="#PhysicalResourceUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Database"/>
+        <Class IRI="#CloudService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GPU"/>
+        <Class IRI="#RawComputationalResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IoT"/>
+        <Class IRI="#CloudService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Messaging"/>
+        <Class IRI="#CloudService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Miscellaneous"/>
+        <Class IRI="#CloudService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Networking"/>
+        <Class IRI="#CloudService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalResourceUnit"/>
+        <Class IRI="#ResourceUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ram"/>
+        <Class IRI="#RawComputationalResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ServerlessPlatform"/>
+        <Class IRI="#Platform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SingleBoardUnit"/>
+        <Class IRI="#PhysicalResourceUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Storage"/>
+        <Class IRI="#CloudService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TPU"/>
+        <Class IRI="#RawComputationalResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VirtualResourceUnit"/>
+        <Class IRI="#ResourceUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AI&amp;MachineLearning"/>
+        <Class IRI="#CloudService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BigData&amp;Analytics"/>
+        <Class IRI="#CloudService"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#CPU"/>
+        <Class IRI="#GPU"/>
+        <Class IRI="#Ram"/>
+        <Class IRI="#TPU"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CPU"/>
+        <Class IRI="#Ram"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CloudPlatform"/>
+        <Class IRI="#ServerlessPlatform"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Compute"/>
+        <Class IRI="#Database"/>
+        <Class IRI="#IoT"/>
+        <Class IRI="#Messaging"/>
+        <Class IRI="#Miscellaneous"/>
+        <Class IRI="#Networking"/>
+        <Class IRI="#Storage"/>
+        <Class IRI="#AI&amp;MachineLearning"/>
+        <Class IRI="#BigData&amp;Analytics"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Computer"/>
+        <Class IRI="#SingleBoardUnit"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PhysicalResourceUnit"/>
+        <Class IRI="#VirtualResourceUnit"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfNodes"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBenchmark"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOperatingSystem"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRawComputationalResource"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSLA"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSLATerm"/>
+        <ObjectProperty IRI="#hasSLA"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isHostedOn"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPartOfCluster"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#operatesWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#providesCloudService"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#runsOnResourceUnit"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesHypervisor"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesPlatform"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#consistsOfNodes"/>
+        <ObjectProperty IRI="#isPartOfCluster"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#operatesWith"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#usesPlatform"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#consistsOfNodes"/>
+    </InverseFunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#consistsOfNodes"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isPartOfCluster"/>
+    </AsymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfNodes"/>
+        <Class IRI="#Cluster"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBenchmark"/>
+        <Class IRI="#Cluster"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOperatingSystem"/>
+        <Class IRI="#ResourceUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRawComputationalResource"/>
+        <Class IRI="#ClusterNode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRawComputationalResource"/>
+        <Class IRI="#ResourceUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSLA"/>
+        <Class IRI="#CloudService"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSLATerm"/>
+        <Class IRI="#ServiceLevelAgreement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isHostedOn"/>
+        <Class IRI="#VirtualResourceUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOfCluster"/>
+        <Class IRI="#Cluster"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#operatesWith"/>
+        <Class IRI="#ClusterNode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#providesCloudService"/>
+        <Class IRI="#CloudProvider"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#runsOnResourceUnit"/>
+        <Class IRI="#ClusterNode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesPlatform"/>
+        <Class IRI="#Cluster"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <Class IRI="#ResourceUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfNodes"/>
+        <Class IRI="#ClusterNode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBenchmark"/>
+        <Class IRI="#Benchmark"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOperatingSystem"/>
+        <Class IRI="#OperatingSystem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRawComputationalResource"/>
+        <Class IRI="#RawComputationalResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSLA"/>
+        <Class IRI="#ServiceLevelAgreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSLATerm"/>
+        <Class IRI="#ServiceLevelAgreementTerm"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isHostedOn"/>
+        <Class IRI="#Compute"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isHostedOn"/>
+        <Class IRI="#ResourceUnit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOfCluster"/>
+        <Class IRI="#ClusterNode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#operatesWith"/>
+        <Class IRI="#OperatingSystem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#providesCloudService"/>
+        <Class IRI="#CloudService"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#runsOnResourceUnit"/>
+        <Class IRI="#ResourceUnit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesPlatform"/>
+        <Class IRI="#Platform"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <Class IRI="#RawComputationalResource"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasArchitecture"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDatatype"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDefinition"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDistribution"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasID"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasImage"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasInstanceID"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasInstanceType"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasLocality"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasPenalty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasPrivateIP"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasRebate"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasRole"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isLocated"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#withAllocatableValue"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#withCapacityValue"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#withNumValue"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasID"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasLocality"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasRole"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasArchitecture"/>
+        <Class IRI="#OperatingSystem"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDatatype"/>
+        <Class IRI="#ServiceLevelAgreementTerm"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDefinition"/>
+        <Class IRI="#ServiceLevelAgreementTerm"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDistribution"/>
+        <Class IRI="#Platform"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasID"/>
+        <Class IRI="#Cluster"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasImage"/>
+        <Class IRI="#OperatingSystem"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasInstanceID"/>
+        <Class IRI="#Compute"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasInstanceType"/>
+        <Class IRI="#Compute"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLocality"/>
+        <Class IRI="#Cluster"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPenalty"/>
+        <Class IRI="#ServiceLevelAgreementTerm"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPrivateIP"/>
+        <Class IRI="#Compute"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRebate"/>
+        <Class IRI="#ServiceLevelAgreementTerm"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRole"/>
+        <Class IRI="#ClusterNode"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isLocated"/>
+        <Class IRI="#Compute"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#withAllocatableValue"/>
+        <Class IRI="#RawComputationalResource"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#withCapacityValue"/>
+        <Class IRI="#RawComputationalResource"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#withNumValue"/>
+        <Class IRI="#CPU"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#withNumValue"/>
+        <Class IRI="#Ram"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+        <Class IRI="#Cluster"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDatatype"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDefinition"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDistribution"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasImage"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLocality"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPenalty"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRebate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRole"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#withAllocatableValue"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#withCapacityValue"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CloudProvider</IRI>
+        <Literal>A company offering cloud-based platform, infrastructure, applications or storage services</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CloudProvider</IRI>
+        <Literal>Cloud Provider</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CloudService</IRI>
+        <Literal>Any type of service that is provided in a public cloud. Different vendors provide different services of various types such as storage, compute or case specific.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CloudService</IRI>
+        <Literal>Cloud Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cluster</IRI>
+        <Literal>Any cluster setup, virtual,physical or hybrid.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ClusterNode</IRI>
+        <Literal>A  node that is part of a cluster setup. Could be deployed on any of cloud provider bare metal etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ClusterNode</IRI>
+        <Literal>Cluster Node</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RawComputationalResource</IRI>
+        <Literal>Computational Resource, e.g. a processing unit like CPU, GPU, TPU or temporary storage i.e. RAM, or Persistent Storage like HDD or SSD, or a MicroController like an Arduino, or a specialized card, or FPGA, or ASIC.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#RawComputationalResource</IRI>
+        <Literal>Raw Computational Resource</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ServiceLevelAgreement</IRI>
+        <Literal>Defines what services exactly a service provider will provide and the required performance level of these services.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ServiceLevelAgreement</IRI>
+        <Literal>Service Level Agreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ServiceLevelAgreementTerm</IRI>
+        <Literal>A legal term as defined in a Service Level Agreement document such as &quot;Availability&quot;, &quot;Uptime&quot; etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ServiceLevelAgreementTerm</IRI>
+        <Literal>Service Level Agreement Term</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

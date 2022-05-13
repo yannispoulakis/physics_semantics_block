@@ -1,4 +1,4 @@
-from rsemantics.utils import is_json
+from rsemantics.utils import is_json, prepare_resources
 from rsemantics.r2onto import r2onto
 from rsemantics.SemanticRules import service_onto_rules
 
@@ -86,6 +86,7 @@ def register_resource_api():
             pass
         else:
             return "422 - Unprocessable Entity"
+
         r2 = r2onto()
 
         # Read request parameters and body
@@ -105,7 +106,9 @@ def register_resource_api():
         sr = service_onto_rules(r2.onto)
         sr.add_locality()
 
-        print(r2.onto.cluster1.hasLocality)
+        r2.onto.save("registered clusters/cluster_ontology", format="rdfxml")
+        prepare_resources("registered clusters/cluster_ontology", list(r2.onto.individuals()))
+        print(r2.cluster.hasLocality)
 
         return "200"
 
@@ -118,11 +121,7 @@ def onto_raw():
     for line in data:
         print(line)
         break
-    return  Response(data, mimetype="text/xml")
-
-
-
-
+    return Response(data, mimetype="text/xml")
 
 
 if __name__ == "__main__":

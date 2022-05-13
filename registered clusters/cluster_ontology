@@ -524,6 +524,7 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <hasArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x86_64</hasArchitecture>
   <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">202205-1211-3356-1caf92fa-8179-4b69-a90a-911524f1613c</hasID>
+  <hasLocality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cloud</hasLocality>
 </Cluster>
 
 <CloudPlatform rdf:about="#OpenShift">
